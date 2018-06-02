@@ -1,0 +1,10 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1279430790	Elephant			\Default Work Unit\Elephant	
+	3948471538	Monkey			\Default Work Unit\Monkey	
+	3987889111	Rooster			\Default Work Unit\Rooster	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	261323106	Rooster	E:\Esben\Documents\paplyd\paplyd_WwiseProject\.cache\Android\SFX\Rooster_1C9C67B2.wem		\Actor-Mixer Hierarchy\Environment\Objects\Objects\Rooster		365408
+	264269839	Monkey	E:\Esben\Documents\paplyd\paplyd_WwiseProject\.cache\Android\SFX\Monkey_1C9C67B2.wem		\Actor-Mixer Hierarchy\Environment\Objects\Objects\Monkey		520452
+	691170784	Elephant	E:\Esben\Documents\paplyd\paplyd_WwiseProject\.cache\Android\SFX\Elephant_1C9C67B2.wem		\Actor-Mixer Hierarchy\Environment\Objects\Objects\Elephant		310140
+

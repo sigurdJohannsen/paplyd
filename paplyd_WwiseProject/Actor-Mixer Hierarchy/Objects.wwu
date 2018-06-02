@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{638D86D0-3E20-4775-BF92-F5138FB2A3D4}" SchemaVersion="85" RootDocumentID="{67975D9C-165E-43D9-826B-0F27CAE5728B}">
+	<AudioObjects>
+		<WorkUnit Name="Objects" ID="{638D86D0-3E20-4775-BF92-F5138FB2A3D4}" OwnerID="{67975D9C-165E-43D9-826B-0F27CAE5728B}" PersistMode="Nested">
+			<ChildrenList>
+				<ActorMixer Name="Objects" ID="{733DCAD9-4A19-4939-B9B2-53662E38ACEB}" ShortID="28760610">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D003C9D-09E5-4530-957E-6A6B6EB41909}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Objects" ID="{3BA1B256-4275-40BF-9E73-ED0F277C6226}" WorkUnitID="{93F26C58-B35E-4304-9F3F-D0F327B9A0A4}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Elephant" ID="{928A79EC-B6C6-40E5-A196-EBCA70C57158}" ShortID="396441690">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D003C9D-09E5-4530-957E-6A6B6EB41909}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{93F26C58-B35E-4304-9F3F-D0F327B9A0A4}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Elephant" ID="{81A5A0A5-33C4-435E-84C2-0042C7DFA212}" ShortID="691170784">
+									<Language>SFX</Language>
+									<AudioFile>Elephant.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Elephant" ID="{81A5A0A5-33C4-435E-84C2-0042C7DFA212}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Monkey" ID="{2D03E649-A033-4307-ADBE-48A8B520EE6B}" ShortID="21001721">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D003C9D-09E5-4530-957E-6A6B6EB41909}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{93F26C58-B35E-4304-9F3F-D0F327B9A0A4}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Monkey" ID="{32AB99CC-C093-4CF2-9239-B1795AF15E9D}" ShortID="264269839">
+									<Language>SFX</Language>
+									<AudioFile>Monkey.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Monkey" ID="{32AB99CC-C093-4CF2-9239-B1795AF15E9D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Rooster" ID="{EDEDA77E-ED83-4D76-86EC-DF2FEE7E8C4C}" ShortID="635511573">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D003C9D-09E5-4530-957E-6A6B6EB41909}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{93F26C58-B35E-4304-9F3F-D0F327B9A0A4}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Rooster" ID="{137A86FB-2B63-418F-B29F-5E192A367A8F}" ShortID="261323106">
+									<Language>SFX</Language>
+									<AudioFile>Rooster.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Rooster" ID="{137A86FB-2B63-418F-B29F-5E192A367A8F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

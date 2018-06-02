@@ -1,0 +1,27 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	1229948536	Environment			\Default Work Unit\Environment	
+
+State	ID	Name	State Group			Notes
+	0	None	Environment			
+	782826392	Default	Environment			
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	85412153	Ambience			\Default Work Unit\Master Audio Bus\Environmental\Ambience	
+	393239870	SFX			\Default Work Unit\Master Audio Bus\SFX	
+	983310469	AUX			\Default Work Unit\Master Audio Bus\AUX	
+	1551306167	UI			\Default Work Unit\Master Audio Bus\UI	
+	1695690031	Objects			\Default Work Unit\Master Audio Bus\Environmental\Objects	
+	1973600711	Environmental			\Default Work Unit\Master Audio Bus\Environmental	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
+
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	782826392	Default			\Default Work Unit\Master Audio Bus\AUX\Default	
+
+Effect plug-ins	ID	Name	Type				Notes
+	1990128658	Room_Medium	Wwise RoomVerb			
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+

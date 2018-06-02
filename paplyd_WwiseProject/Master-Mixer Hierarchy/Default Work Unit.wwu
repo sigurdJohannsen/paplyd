@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{93F26C58-B35E-4304-9F3F-D0F327B9A0A4}" SchemaVersion="85">
+	<Busses>
+		<WorkUnit Name="Default Work Unit" ID="{93F26C58-B35E-4304-9F3F-D0F327B9A0A4}" PersistMode="Standalone">
+			<ChildrenList>
+				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
+					<ReferenceList>
+						<Reference Name="AudioDevice">
+							<ObjectRef Name="System" ID="{1EDDAD5D-DC2A-4186-9A69-913BD5A45245}" WorkUnitID="{8622D34A-4498-43FF-84F2-87081A891CD7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="UI" ID="{E0599A93-10A4-4450-81EE-24077A17F4FA}"/>
+						<Bus Name="Music" ID="{547C3C77-73DF-45F3-A74D-E6D8D8FDA0C0}"/>
+						<Bus Name="Environmental" ID="{540978EB-BDFE-4DB4-8251-CDD82A79F55A}">
+							<ChildrenList>
+								<Bus Name="Ambience" ID="{F7B8899F-B069-4A69-BE19-990D7E4C4F3D}"/>
+								<Bus Name="Objects" ID="{3BA1B256-4275-40BF-9E73-ED0F277C6226}"/>
+							</ChildrenList>
+						</Bus>
+						<Bus Name="AUX" ID="{FCD3376F-01C1-472E-8CBD-9D40EC2F6B27}">
+							<ChildrenList>
+								<AuxBus Name="Default" ID="{DF32313D-22F5-4AA3-93EF-C35181B89CCE}">
+									<ReferenceList>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Room_Medium" ID="{F5C06EC1-E4A4-4332-A7D3-A89E2986B74F}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+									</ReferenceList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="Environment" ID="{C6A5DFCA-7578-4C80-B418-479754C2C2DA}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="Default" ID="{74492AD6-76AA-434C-B603-1C2CEF7D3F72}"/>
+												<State Name="" ID="{98619736-34F9-4A37-B7BC-9DCC47B2AF2E}" ShortID="877877956"/>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
+								</AuxBus>
+							</ChildrenList>
+						</Bus>
+						<Bus Name="SFX" ID="{A105026B-231C-44FB-93B7-90E3C762E622}"/>
+					</ChildrenList>
+				</Bus>
+			</ChildrenList>
+		</WorkUnit>
+	</Busses>
+</WwiseDocument>

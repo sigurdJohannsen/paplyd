@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{6B7B2254-9AF6-4478-A981-BA655D2C4D69}" SchemaVersion="85" RootDocumentID="{67975D9C-165E-43D9-826B-0F27CAE5728B}">
+	<AudioObjects>
+		<WorkUnit Name="SFX" ID="{6B7B2254-9AF6-4478-A981-BA655D2C4D69}" OwnerID="{67975D9C-165E-43D9-826B-0F27CAE5728B}" PersistMode="Nested">
+			<ChildrenList>
+				<ActorMixer Name="SFX" ID="{25796B9B-F7E2-4063-A2B6-EC7C497DF2EB}" ShortID="532090899">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D003C9D-09E5-4530-957E-6A6B6EB41909}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{A105026B-231C-44FB-93B7-90E3C762E622}" WorkUnitID="{93F26C58-B35E-4304-9F3F-D0F327B9A0A4}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<ActorMixer Name="Swap" ID="{8FC3C5DE-2356-42E4-83FF-B2C1FEA4AC61}" ShortID="722190554">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D003C9D-09E5-4530-957E-6A6B6EB41909}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{93F26C58-B35E-4304-9F3F-D0F327B9A0A4}"/>
+								</Reference>
+							</ReferenceList>
+						</ActorMixer>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd94fd6d9150d1c49806dbfec67d5834, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - Guid: '{EFBB2CD4-79B7-45DE-8686-B3A5583AE3F6}'
+    m_lastTimePart2: -1999255372
+    m_lastTimePsrt1: -1425747379
+    ParentPhysicalPath: 
+    PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    List: []
+  autoPopulateEnabled: 1
+  AuxBusWwu:
+  - Guid: '{93F26C58-B35E-4304-9F3F-D0F327B9A0A4}'
+    m_lastTimePart2: -1999255369
+    m_lastTimePsrt1: -1209293176
+    ParentPhysicalPath: 
+    PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    List:
+    - Guid: 3d3132dff522a34a93efc35181b89cce
+      ID: 782826392
+      Name: Default
+      Path: Default Work Unit\Master Audio Bus\AUX\Default
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: AUX
+        ObjectType: 2
+      - ElementName: Default
+        ObjectType: 1
+  BankWwu:
+  - Guid: '{26AFD662-72D8-4329-B100-10E7A09CC6D3}'
+    m_lastTimePart2: -1999255369
+    m_lastTimePsrt1: -253588691
+    ParentPhysicalPath: 
+    PhysicalPath: SoundBanks\Default Work Unit.wwu
+    List:
+    - Guid: fa5c1966730079448b6845dde5699828
+      ID: -1133058374
+      Name: Main
+      Path: Default Work Unit\Main
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Main
+        ObjectType: 7
+  basePath: Audio\GeneratedSoundBanks
+  callbackManagerBufferSize: 4
+  CurrentPluginConfig: 
+  defaultPoolSize: 4096
+  EventWwu:
+  - Guid: '{D8321BC4-FFE0-48BB-B3EF-F145E9A1BF4B}'
+    m_lastTimePart2: -1999255369
+    m_lastTimePsrt1: -1209438316
+    ParentPhysicalPath: 
+    PhysicalPath: Events\Default Work Unit.wwu
+    List:
+    - Guid: feb848ee4ff8324f996af572822f0f04
+      ID: 1279430790
+      Name: Elephant
+      Path: Default Work Unit\Elephant
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Elephant
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: c635f024338dda4997de574e62821c93
+      ID: -346495758
+      Name: Monkey
+      Path: Default Work Unit\Monkey
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Monkey
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 22dfe4bea0087f4c90cc0775e5c05c8b
+      ID: -307078185
+      Name: Rooster
+      Path: Default Work Unit\Rooster
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Rooster
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+  ExpandedItems:
+  - /paplyd_WwiseProject
+  - /paplyd_WwiseProject/SoundBanks
+  - /paplyd_WwiseProject/SoundBanks/Default Work Unit
+  language: English(US)
+  lowerPoolSize: 2048
+  m_lastPopulateTimePart2: 0
+  m_lastPopulateTimePsrt1: 0
+  memoryCutoffThreshold: 0.95
+  preparePoolSize: 0
+  RtpcWwu:
+  - Guid: '{921906D0-CAC3-4C89-8F1A-628D387CA651}'
+    m_lastTimePart2: -1999255372
+    m_lastTimePsrt1: -1426434311
+    ParentPhysicalPath: 
+    PhysicalPath: Game Parameters\Default Work Unit.wwu
+    List: []
+  StateWwu:
+  - Guid: '{FBEE4EC3-FFF3-4A10-9B39-C3EDCD7382AC}'
+    m_lastTimePart2: -1999255369
+    m_lastTimePsrt1: -1209366967
+    ParentPhysicalPath: 
+    PhysicalPath: States\Default Work Unit.wwu
+    List:
+    - Guid: cadfa5c67875804cb418479754c2c2da
+      ID: 1229948536
+      Name: Environment
+      Path: Default Work Unit\Environment
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Environment
+        ObjectType: 9
+      ValueGuids:
+      - bytes: d62a4974aa764c43b6031c2cef7d3f72
+      - bytes: d34a276dcbb31b47b7916f9a881a1c86
+      ValueIcons:
+      - ElementName: Default
+        ObjectType: 8
+      - ElementName: None
+        ObjectType: 8
+      valueIDs: 98fba82edb3ba32c
+      values:
+      - Default
+      - None
+  streamingPoolSize: 1024
+  SwitchWwu:
+  - Guid: '{155C6677-A004-4370-9581-1555ED59DBC6}'
+    m_lastTimePart2: -1999255372
+    m_lastTimePsrt1: -1425797406
+    ParentPhysicalPath: 
+    PhysicalPath: Switches\Default Work Unit.wwu
+    List: []
+  TriggerWwu:
+  - Guid: '{4FC8743D-9025-431B-8161-C99EC888DA95}'
+    m_lastTimePart2: -1999255372
+    m_lastTimePsrt1: -1426183928
+    ParentPhysicalPath: 
+    PhysicalPath: Triggers\Default Work Unit.wwu
+    List: []
