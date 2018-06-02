@@ -22,16 +22,19 @@ public class AnimationDatabase : BaseSingleton<AnimationDatabase> {
         foreach (var sprite in Resources.LoadAll<Sprite>(mundPath))
         {
             MundList.Add(sprite.name, sprite);
+            Debug.Log(sprite + " added to mund");
         }
         OjneList = new Dictionary<string, Sprite>();
         foreach (var sprite in Resources.LoadAll<Sprite>(ojnePath))
         {
             OjneList.Add(sprite.name, sprite);
+            Debug.Log(sprite + " added to øjn");
         }
         KropList = new Dictionary<string, Sprite>();
         foreach (var sprite in Resources.LoadAll<Sprite>(kropPath))
         {
             KropList.Add(sprite.name, sprite);
+            Debug.Log(sprite + " added to krop");
         }
         CSVReader csv = new CSVReader();
         csv.LoadData();
@@ -47,7 +50,7 @@ public class AnimationDatabase : BaseSingleton<AnimationDatabase> {
                 Debug.Log(item.Key+" = "+ item.Value.Tag);
                 foreach (var i in item.Value.TimeStepList)
                 {
-                    Debug.Log(i.time+" , "+i.Mund+" , "+i.Ojne+" , "+i.Krop);
+                    Debug.Log("tid: "+i.time+" , Mund: "+i.Mund+" ,Øjne: "+i.Ojne+" ,Krop: "+i.Krop);
                 }
             }
         }

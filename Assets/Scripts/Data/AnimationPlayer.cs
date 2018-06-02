@@ -13,23 +13,30 @@ public class AnimationPlayer : MonoBehaviour {
     public SpriteRenderer Ojne;
     public SpriteRenderer Krop;
 
+
     public IEnumerator PlayAnimation(string tag)
     {
         AnimationDatabase.Instance.SoundAnimationDictionary.TryGetValue(tag,out currentSoundAnimation);
-        //Wwise
-        //PostEvent.Play(currentSoundAnimation.Tag);
+        Debug.Log(tag);
+        if(GetComponent<AudioSource>())
+        {
+            GetComponent<AudioSource>().clip = Resources.Load("Sounds/" + tag) as AudioClip;
+            GetComponent<AudioSource>().Play();
+        }
         timeWaited = 0.0f;
         Sprite tempMund = null, tempOjne = null, tempKrop = null;
         for (int i = 0; i < currentSoundAnimation.TimeStepList.Count; i++)
         {
-            yield return new WaitForSeconds(currentSoundAnimation.TimeStepList[i].time - timeWaited);
-            timeWaited += currentSoundAnimation.TimeStepList[i].time;
+            yield return new WaitForSecondsRealtime(currentSoundAnimation.TimeStepList[i].time - timeWaited);
+            timeWaited = currentSoundAnimation.TimeStepList[i].time;
             AnimationDatabase.Instance.MundList.TryGetValue(currentSoundAnimation.TimeStepList[i].Mund, out tempMund);
-            AnimationDatabase.Instance.MundList.TryGetValue(currentSoundAnimation.TimeStepList[i].Ojne, out tempOjne);
-            AnimationDatabase.Instance.MundList.TryGetValue(currentSoundAnimation.TimeStepList[i].Krop, out tempKrop);
+            AnimationDatabase.Instance.OjneList.TryGetValue(currentSoundAnimation.TimeStepList[i].Ojne, out tempOjne);
+            if (AnimationDatabase.Instance.KropList.TryGetValue(currentSoundAnimation.TimeStepList[i].Krop, out tempKrop))
+                Krop.sprite = tempKrop;
+            else
+                Debug.LogError(currentSoundAnimation.TimeStepList[i].Krop + " not found");
             Mund.sprite = tempMund;
             Ojne.sprite = tempOjne;
-            Krop.sprite = tempKrop;
         }
         yield return true;
     }
