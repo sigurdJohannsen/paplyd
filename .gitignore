@@ -56,3 +56,4 @@ paplyd_WwiseProject/IncrementalSoundBankData.xml
 *.akd
 paplyd_WwiseProject/.cache
 paplyd_WwiseProject/.backup
+Assets/Wwise/Deployment/Plugins/iOS/*
