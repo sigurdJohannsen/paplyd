@@ -57,3 +57,5 @@ paplyd_WwiseProject/IncrementalSoundBankData.xml
 paplyd_WwiseProject/.cache
 paplyd_WwiseProject/.backup
 Assets/Wwise/Deployment/Plugins/iOS/*
+Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset
+Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/DecodedBanks/English(US).meta

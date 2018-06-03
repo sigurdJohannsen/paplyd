@@ -62,6 +62,7 @@ public class Sound : MonoBehaviour, IDragHandler, IEndDragHandler {
                     SetAnimal(hit.transform.GetComponent<Animal>());
                     thisAnimal.soundAttached = otherAttachedSound;
                     otherAttachedSound.SetAnimal(thisAnimal);
+                    AkSoundEngine.PostEvent("Monkey", gameObject);
                 }
                 else {
                     //  Move sound to empty animal.
