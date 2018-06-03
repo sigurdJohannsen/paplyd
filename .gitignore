@@ -60,6 +60,4 @@ Assets/Wwise/Deployment/Plugins/iOS/*
 Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset
 Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/DecodedBanks/English(US).meta
 Assets/Wwise/Deployment/Plugins/Windows/x86_64/Profile/AkSoundEngine.dll
-Assets/Wwise/Editor/ProjectData/AkWwiseProjectData 3.asset
-Assets/Wwise/Editor/ProjectData/AkWwiseProjectData 2.asset
-Assets/Wwise/Editor/ProjectData/AkWwiseProjectData 1.asset
+Assets/Wwise/*
