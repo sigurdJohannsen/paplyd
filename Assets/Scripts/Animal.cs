@@ -9,7 +9,8 @@ public class Animal : MonoBehaviour {
     public static bool hoveringOverValidObject;
 
     public Sound soundAttached;
-    public bool occupied;
+    public bool occupied,
+                swappingTakingPlace;
 
     private EventManager eventManager;
 

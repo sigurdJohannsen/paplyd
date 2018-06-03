@@ -13,16 +13,17 @@ public class Sound : MonoBehaviour, IDragHandler, IEndDragHandler {
     private Vector3 myPosition;
     private PolygonCollider2D myPolygonCollider;
     private new Renderer renderer;
+    private SoundSwap soundSwap;
     private EventManager eventManager;
     private bool dragStarted,
-                 iAmBeingDragged,
-                 iWasSwappedToThisAnimal;
+                 iAmBeingDragged;
+    private Transform soundSwapPoolTransform;
 
     public void SetAnimal(Animal animal) {
         myAnimal = animal;
         transform.localPosition = myAnimal.transform.localPosition;
         myPosition = transform.localPosition;
-        //  Copy the scale of the animal, to prooperly scale the polygoncollider for the sound.
+        //  Copy the scale of the animal, to properly scale the polygoncollider for the sound.
         transform.localScale = myAnimal.GetComponent<Transform>().localScale;
         myPolygonCollider.SetPath(0, myAnimal.GetComponent<PolygonCollider2D>().GetPath(0));
     }
@@ -45,9 +46,12 @@ public class Sound : MonoBehaviour, IDragHandler, IEndDragHandler {
     }
 
     private void Start() {
-        //  Copy the scale of the animal, to prooperly scale the polygoncollider for the sound.
-        transform.localScale = myAnimal.GetComponent<Transform>().localScale;
-        myPolygonCollider.SetPath(0, myAnimal.GetComponent<PolygonCollider2D>().GetPath(0));
+        //  Copy the scale of the animal, to properly scale the polygoncollider for the sound.
+        if (myAnimal != null) {
+            transform.localScale = myAnimal.GetComponent<Transform>().localScale;
+        }
+        soundSwap = FindObjectOfType<SoundSwap>();
+        soundSwapPoolTransform = FindObjectOfType<SoundSwapPool>().transform;
     }
 
     private void OnMouseDown() {
@@ -56,7 +60,7 @@ public class Sound : MonoBehaviour, IDragHandler, IEndDragHandler {
 
     public void OnDrag(PointerEventData eventData) {
         transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, - Camera.main.transform.position.z));
-        if (!dragStarted) {
+        if (!dragStarted && !myAnimal.swappingTakingPlace) {
             dragStarted = true;
             iAmBeingDragged = true;
             eventManager.InvokeDraggingStarted();
@@ -69,7 +73,7 @@ public class Sound : MonoBehaviour, IDragHandler, IEndDragHandler {
 
         RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
         if (hit.collider != null) {
-            if (Animal.hoveringOverValidObject) {
+            if (Animal.hoveringOverValidObject && !hit.transform.GetComponent<Animal>().swappingTakingPlace) {
                 //  Snap sound to the new animal.
                 transform.localPosition = hit.transform.localPosition;
                 myPosition = transform.localPosition;
@@ -83,8 +87,11 @@ public class Sound : MonoBehaviour, IDragHandler, IEndDragHandler {
                     thisAnimal.soundAttached = otherAttachedSound;
                     otherAttachedSound.SetAnimal(thisAnimal);
                     //AkSoundEngine.PostEvent("Monkey", gameObject);      //play the sound of a sound being placed on an animal(?)
-                    otherAttachedSound.iWasSwappedToThisAnimal = true;
-                    eventManager.InvokeSoundsSwapped(hit.transform.GetComponent<Animal>().transform, thisAnimal.transform);
+                    if (soundSwapPoolTransform.GetChild(0) != null) {
+                        thisAnimal.swappingTakingPlace = true;
+                        hit.transform.GetComponent<Animal>().swappingTakingPlace = true;
+                        eventManager.InvokeSoundsSwapped(hit.transform.GetComponent<Animal>().transform, thisAnimal.transform, soundSwapPoolTransform.GetChild(0).GetComponent<SoundSwap>());       //add soundSwap object from soundSwapPool.
+                    }
                 }   
                 else {
                     //  Move sound to empty animal.
@@ -96,6 +103,10 @@ public class Sound : MonoBehaviour, IDragHandler, IEndDragHandler {
                     hit.transform.GetComponent<Animal>().soundAttached = this;
                     SetAnimal(hit.transform.GetComponent<Animal>());
                 }
+            }
+            else {
+                //  If sound is dropped inside of designated area, but animal is busy, return sound to origin.
+                transform.localPosition = myPosition;
             }
         }
         else {
@@ -121,7 +132,7 @@ public class Sound : MonoBehaviour, IDragHandler, IEndDragHandler {
         }
     }
 
-    //  Distinguise a click from a drag initiation.
+    //  Distinguish a click from a drag initiation.
     IEnumerator WaitForClick() {
         yield return new WaitForSeconds(0.3f);
         if (!dragStarted) {

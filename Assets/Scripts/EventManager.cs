@@ -2,7 +2,7 @@
 
 public delegate void OnDraggingStartedEventHandler();
 public delegate void OnDraggingEndedEventHandler();
-public delegate void OnSoundsSwappedEventHandler(Transform origin, Transform target);
+public delegate void OnSoundsSwappedEventHandler(Transform origin, Transform target, SoundSwap soundSwapper);
 public delegate void OnSwappedSoundReachedDestinationEventHandler();
 public delegate void OnCorrectSoundEventHandler();
 public delegate void OnWrongSoundEventHandler();
@@ -42,10 +42,10 @@ public class EventManager : MonoBehaviour {
         }
     }
 
-    public void InvokeSoundsSwapped(Transform origin, Transform target) {
+    public void InvokeSoundsSwapped(Transform origin, Transform target, SoundSwap soundSwapper) {
         if (OnSoundsSwapped != null) {
             //Debug.Log("EVENT MANAGER: InvokeSoundsSwapped");
-            OnSoundsSwapped(origin, target);
+            OnSoundsSwapped(origin, target, soundSwapper);
         }
     }
     
