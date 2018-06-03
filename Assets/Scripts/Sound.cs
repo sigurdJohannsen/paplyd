@@ -12,10 +12,11 @@ public class Sound : MonoBehaviour, IDragHandler, IEndDragHandler {
     public Animal myAnimal;
     private Vector3 myPosition;
     private PolygonCollider2D myPolygonCollider;
-    private Renderer renderer;
+    private new Renderer renderer;
     private EventManager eventManager;
     private bool dragStarted,
-                 iAmBeingDragged;
+                 iAmBeingDragged,
+                 iWasSwappedToThisAnimal;
 
     public void SetAnimal(Animal animal) {
         myAnimal = animal;
@@ -82,7 +83,9 @@ public class Sound : MonoBehaviour, IDragHandler, IEndDragHandler {
                     thisAnimal.soundAttached = otherAttachedSound;
                     otherAttachedSound.SetAnimal(thisAnimal);
                     //AkSoundEngine.PostEvent("Monkey", gameObject);      //play the sound of a sound being placed on an animal(?)
-                }
+                    otherAttachedSound.iWasSwappedToThisAnimal = true;
+                    eventManager.InvokeSoundsSwapped(hit.transform.GetComponent<Animal>().transform, thisAnimal.transform);
+                }   
                 else {
                     //  Move sound to empty animal.
                     if (myAnimal != null) {
@@ -117,7 +120,7 @@ public class Sound : MonoBehaviour, IDragHandler, IEndDragHandler {
             iAmBeingDragged = false;
         }
     }
-    
+
     //  Distinguise a click from a drag initiation.
     IEnumerator WaitForClick() {
         yield return new WaitForSeconds(0.3f);
