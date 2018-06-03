@@ -35,8 +35,9 @@ public class AnimationDatabase : BaseSingleton<AnimationDatabase> {
         }
         CSVReader csv = new CSVReader();
         csv.LoadData();
-        
+        Debug.Log("Data has been loaded");
     }
+
 
     public void Update()
     {
@@ -44,13 +45,19 @@ public class AnimationDatabase : BaseSingleton<AnimationDatabase> {
         {
             foreach (var item in SoundAnimationDictionary)
             {
-                Debug.Log(item.Key+" = "+ item.Value.Tag);
+                Debug.Log(item.Key + " = " + item.Value.Tag);
                 foreach (var i in item.Value.TimeStepList)
                 {
-                    Debug.Log(i.time+" , "+i.Mund+" , "+i.Ojne+" , "+i.Krop);
+                    Debug.Log(i.time + " , " + i.Mund + " , " + i.Ojne + " , " + i.Krop);
                 }
             }
         }
-        
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            foreach (var s in KropList)
+            {
+                Debug.Log(s.Key + " , " + s.Value);
+            }
+        }
     }
 }

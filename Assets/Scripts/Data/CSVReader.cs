@@ -7,6 +7,7 @@ public class CSVReader
 
     private SoundAnimation tempSoundAnimation;
     private SoundAnimation.TimeStep tempTimeStep;
+
     public void LoadData()
     {
         TextAsset itemData = Resources.Load<TextAsset>("CSVSounds");
