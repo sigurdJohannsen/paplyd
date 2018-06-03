@@ -11,13 +11,19 @@ public class Sound : MonoBehaviour, IDragHandler, IEndDragHandler {
 
     public Animal myAnimal;
     private Vector3 myPosition;
+    private PolygonCollider2D myPolygonCollider;
+    private Renderer renderer;
     private EventManager eventManager;
-    private bool dragStarted;
+    private bool dragStarted,
+                 iAmBeingDragged;
 
     public void SetAnimal(Animal animal) {
         myAnimal = animal;
         transform.localPosition = myAnimal.transform.localPosition;
         myPosition = transform.localPosition;
+        //  Copy the scale of the animal, to prooperly scale the polygoncollider for the sound.
+        transform.localScale = myAnimal.GetComponent<Transform>().localScale;
+        myPolygonCollider.SetPath(0, myAnimal.GetComponent<PolygonCollider2D>().GetPath(0));
     }
 
     private void OnEnable() {
@@ -31,6 +37,18 @@ public class Sound : MonoBehaviour, IDragHandler, IEndDragHandler {
         eventManager.OnDraggingEnded -= new OnDraggingEndedEventHandler(OnDraggingEnded);
     }
 
+    private void Awake() {
+        myPolygonCollider = GetComponent<PolygonCollider2D>();
+        renderer = GetComponent<Renderer>();
+        renderer.enabled = false;
+    }
+
+    private void Start() {
+        //  Copy the scale of the animal, to prooperly scale the polygoncollider for the sound.
+        transform.localScale = myAnimal.GetComponent<Transform>().localScale;
+        myPolygonCollider.SetPath(0, myAnimal.GetComponent<PolygonCollider2D>().GetPath(0));
+    }
+
     private void OnMouseDown() {
         StartCoroutine(WaitForClick());
     }
@@ -39,6 +57,7 @@ public class Sound : MonoBehaviour, IDragHandler, IEndDragHandler {
         transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, - Camera.main.transform.position.z));
         if (!dragStarted) {
             dragStarted = true;
+            iAmBeingDragged = true;
             eventManager.InvokeDraggingStarted();
         }
     }
@@ -62,7 +81,7 @@ public class Sound : MonoBehaviour, IDragHandler, IEndDragHandler {
                     SetAnimal(hit.transform.GetComponent<Animal>());
                     thisAnimal.soundAttached = otherAttachedSound;
                     otherAttachedSound.SetAnimal(thisAnimal);
-                    AkSoundEngine.PostEvent("Monkey", gameObject);
+                    AkSoundEngine.PostEvent("Monkey", gameObject);      //play the sound of a sound being placed on an animal(?)
                 }
                 else {
                     //  Move sound to empty animal.
@@ -85,11 +104,18 @@ public class Sound : MonoBehaviour, IDragHandler, IEndDragHandler {
 
     private void OnDraggingStarted() {
         transform.GetComponent<PolygonCollider2D>().enabled = false;
+        if (iAmBeingDragged) {
+            renderer.enabled = true;
+        }
     }
 
     private void OnDraggingEnded() {
         dragStarted = false;
         transform.GetComponent<PolygonCollider2D>().enabled = true;
+        if (iAmBeingDragged) {
+            renderer.enabled = false;
+            iAmBeingDragged = false;
+        }
     }
     
     //  Distinguise a click from a drag initiation.

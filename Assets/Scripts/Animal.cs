@@ -13,7 +13,7 @@ public class Animal : MonoBehaviour {
 
     private EventManager eventManager;
 
-    private void Awake() {
+    private void Start() {
         if (soundAttached != null) {
             soundAttached.SetAnimal(this);
             occupied = true;
