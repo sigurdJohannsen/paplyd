@@ -2,7 +2,8 @@
 
 public delegate void OnDraggingStartedEventHandler();
 public delegate void OnDraggingEndedEventHandler();
-public delegate void OnSoundsSwappedEventHandler();
+public delegate void OnSoundsSwappedEventHandler(Transform origin, Transform target, SoundSwap soundSwapper);
+public delegate void OnSwappedSoundReachedDestinationEventHandler();
 public delegate void OnCorrectSoundEventHandler();
 public delegate void OnWrongSoundEventHandler();
 public delegate void OnAnimalWasClickedEventHandler();
@@ -13,6 +14,7 @@ public class EventManager : MonoBehaviour {
     public event OnDraggingStartedEventHandler OnDraggingStarted;
     public event OnDraggingEndedEventHandler OnDraggingEnded;
     public event OnSoundsSwappedEventHandler OnSoundsSwapped;
+    public event OnSwappedSoundReachedDestinationEventHandler OnSwappedSoundReachedDestination;
     public event OnCorrectSoundEventHandler OnCorrectSound;
     public event OnWrongSoundEventHandler OnWrongSound;
     public event OnAnimalWasClickedEventHandler OnAnimalWasClicked;
@@ -40,10 +42,17 @@ public class EventManager : MonoBehaviour {
         }
     }
 
-    public void InvokeSoundsSwapped() {
+    public void InvokeSoundsSwapped(Transform origin, Transform target, SoundSwap soundSwapper) {
         if (OnSoundsSwapped != null) {
             //Debug.Log("EVENT MANAGER: InvokeSoundsSwapped");
-            OnSoundsSwapped();
+            OnSoundsSwapped(origin, target, soundSwapper);
+        }
+    }
+    
+    public void InvokeSwappedSoundReachedDestination() {
+        if (OnSwappedSoundReachedDestination != null) {
+            //Debug.Log("EVENT MANAGER: InvokeSwappedSoundReachedDestination");
+            OnSwappedSoundReachedDestination();
         }
     }
 
