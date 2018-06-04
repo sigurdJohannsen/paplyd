@@ -27,7 +27,6 @@ ExportedObj/
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
-*.meta
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
@@ -35,22 +34,3 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-
-# Streaming Assets
-Assets/StreamingAssets/Audio/GeneratedSoundBanks/Android/SoundbanksInfo.xml
-Assets/StreamingAssets/Audio/GeneratedSoundBanks/Android/PluginInfo.xml
-Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/SoundbanksInfo.xml
-Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/PluginInfo.xml
-Assets/StreamingAssets/Audio/GeneratedSoundBanks/Mac/SoundbanksInfo.xml
-Assets/StreamingAssets/Audio/GeneratedSoundBanks/Mac/PluginInfo.xml
-Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/SoundbanksInfo.xml
-Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/PluginInfo.xml
-
-# Wwise Project
-paplyd_WwiseProject/paplyd_WwiseProject.Esben.wsettings
-paplyd_WwiseProject/paplyd_WwiseProject.Esben.validationcache
-paplyd_WwiseProject/IncrementalSoundBankData.xml
-paplyd_WwiseProject/.cache
-paplyd_WwiseProject/.backup
-Assets/Wwise/*
-*.akd
