@@ -9,9 +9,10 @@ public class AnimationTester : MonoBehaviour {
     {
         ap = GetComponent<AnimationPlayer>();
     }
+
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.M))
+        if(Input.GetKeyDown(KeyCode.M)|| Input.touchCount > 1)
         {
             StartCoroutine(ap.PlayAnimation("Monkey"));  
         }
