@@ -2,7 +2,7 @@
 
 /*
  * This script is used to control the object that fakes the swapped sound's movement from one animal to another.
- * THe script also resets swappingTakingPlace for animals involved in the swap.
+ * The script also resets swappingTakingPlace for animals involved in the swap.
  * */
 public class SoundSwap : MonoBehaviour {
 
@@ -33,8 +33,8 @@ public class SoundSwap : MonoBehaviour {
     }
 
     private void OnSoundsSwapped(Transform origin, Transform target, SoundSwap soundSwapper) {
-        Debug.Log("sound swap invoked");
         if (soundSwapper == this) {
+            //Debug.Log("sound swap invoked");
             transform.SetParent(null);
             renderer.sprite = target.GetComponent<Animal>().soundAttached.GetComponent<SpriteRenderer>().sprite;
             renderer.enabled = true;
@@ -55,6 +55,7 @@ public class SoundSwap : MonoBehaviour {
                 transform.position = Vector3.Lerp(startPosition, targetPosition, Timer);
             }
             else {
+                //Debug.Log("sound swap reached endpoint");
                 swappingTakingPlace = false;
                 renderer.enabled = false;
                 eventManager.InvokeSwappedSoundReachedDestination();
