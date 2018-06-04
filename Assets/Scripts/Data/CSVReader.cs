@@ -29,7 +29,8 @@ public class CSVReader
             float.TryParse(row[1], out tempTimeStep.time);
             tempTimeStep.Mund = row[2];
             tempTimeStep.Ojne = row[3];
-            tempTimeStep.Krop = row[4];
+            tempTimeStep.Krop = row[4]; 
+            tempTimeStep.Animation = row[5].Trim(); //Added trim to remove newline
         }
     }
 }

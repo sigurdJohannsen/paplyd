@@ -13,7 +13,7 @@ public class SoundAnimation {
         public string Mund;
         public string Ojne;
         public string Krop;
-
+        public string Animation;
     }
 
 }
