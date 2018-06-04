@@ -14,9 +14,11 @@ public class AnimationDatabase : BaseSingleton<AnimationDatabase> {
     public Dictionary<string,Sprite> OjneList;
     public Dictionary<string,Sprite> KropList;
 
+    public SoundAnimation IdleSoundAnimation;
 
     public void Start()
     {
+        IdleSoundAnimationGenerator();
         SoundAnimationDictionary = new Dictionary<string, SoundAnimation>();
         MundList = new Dictionary<string, Sprite>();
         foreach (var sprite in Resources.LoadAll<Sprite>(mundPath))
@@ -37,7 +39,17 @@ public class AnimationDatabase : BaseSingleton<AnimationDatabase> {
         csv.LoadData();
         Debug.Log("Data has been loaded");
     }
-
+    private void IdleSoundAnimationGenerator()
+    {
+        IdleSoundAnimation = new SoundAnimation();
+        SoundAnimation.TimeStep timeStep = new SoundAnimation.TimeStep();
+        timeStep.Animation = "0";
+        timeStep.Krop = "1";
+        timeStep.Mund = "1";
+        timeStep.Ojne = "1";
+        timeStep.time = 0.0f;
+        IdleSoundAnimation.TimeStepList.Add(timeStep);
+    }
 
     public void Update()
     {

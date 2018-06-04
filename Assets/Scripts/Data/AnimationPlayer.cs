@@ -1,7 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations;
+
 public class AnimationPlayer : MonoBehaviour {
 
     public string MundFigure = "";
@@ -12,14 +13,16 @@ public class AnimationPlayer : MonoBehaviour {
     private float timeWaited;
     private AudioSource audioSource;
     private List<AudioClip> audioClips;
-
-
+    private float audioTime;
+    Sprite tempMund = null, tempOjne = null, tempKrop = null;
     [Header("SpriteRenderers of the prefab")]
     public SpriteRenderer Mund;
     public SpriteRenderer Ojne;
     public SpriteRenderer Krop;
 
     Animator animator;
+    bool lort = false;
+
 
     private void AnimatorAssist(string value)
     {
@@ -38,42 +41,56 @@ public class AnimationPlayer : MonoBehaviour {
             audioSource = GetComponent<AudioSource>();
         audioSource.clip = Resources.Load("Sounds/"+tag) as AudioClip;
         audioSource.Play();
-        
+        audioTime = audioSource.clip.length;
         timeWaited = 0.0f;
-        Sprite tempMund = null, tempOjne = null, tempKrop = null;
-        for (int i = 0; i < currentSoundAnimation.TimeStepList.Count; i++)
+       
+        for (int i = 0; i < currentSoundAnimation.TimeStepList.Count + 1; i++)
         {
-            yield return new WaitForSecondsRealtime(currentSoundAnimation.TimeStepList[i].time - timeWaited);
-            timeWaited = currentSoundAnimation.TimeStepList[i].time;
-            if (AnimationDatabase.Instance.KropList.TryGetValue(KropFigure + currentSoundAnimation.TimeStepList[i].Krop, out tempKrop))
+            if(i == currentSoundAnimation.TimeStepList.Count)
             {
-               
-                Krop.sprite = tempKrop;
+                yield return new WaitForSecondsRealtime(audioTime - timeWaited);
+                currentSoundAnimation = AnimationDatabase.Instance.IdleSoundAnimation;
+                SetSprites(0);
+                AnimatorAssist("0"); // idle
             }
             else
             {
-                Debug.LogError(KropFigure + currentSoundAnimation.TimeStepList[i].Krop + "could not be found");
+                yield return new WaitForSecondsRealtime(currentSoundAnimation.TimeStepList[i].time - timeWaited);
+                timeWaited = currentSoundAnimation.TimeStepList[i].time;
+                SetSprites(i);
+                AnimatorAssist(currentSoundAnimation.TimeStepList[i].Animation);
             }
-            if (AnimationDatabase.Instance.MundList.TryGetValue(MundFigure + currentSoundAnimation.TimeStepList[i].Mund, out tempMund))
-            {
-                Mund.sprite = tempMund;
-            }
-            else
-            {
-                Debug.LogError(MundFigure + currentSoundAnimation.TimeStepList[i].Mund + "could not be found");
-            }
-            if (AnimationDatabase.Instance.OjneList.TryGetValue(OjneFigure + currentSoundAnimation.TimeStepList[i].Ojne, out tempOjne))
-            {
-                Ojne.sprite = tempOjne;
-            }
-            else
-            {
-                Debug.LogError(OjneFigure + currentSoundAnimation.TimeStepList[i].Ojne + "could not be found");
-            }
-
-            AnimatorAssist(currentSoundAnimation.TimeStepList[i].Animation);
-
         }
+        
         yield return true;
+    }
+
+    public void SetSprites(int csv)
+    {
+        if (AnimationDatabase.Instance.KropList.TryGetValue(KropFigure + currentSoundAnimation.TimeStepList[csv].Krop, out tempKrop))
+        {
+            Krop.sprite = tempKrop;
+        }
+        else
+        {
+            Debug.LogError(KropFigure + currentSoundAnimation.TimeStepList[csv].Krop + "could not be found");
+        }
+        if (AnimationDatabase.Instance.MundList.TryGetValue(MundFigure + currentSoundAnimation.TimeStepList[csv].Mund, out tempMund))
+        {
+            Mund.sprite = tempMund;
+        }
+        else
+        {
+            Debug.LogError(MundFigure + currentSoundAnimation.TimeStepList[csv].Mund + "could not be found");
+        }
+        if (AnimationDatabase.Instance.OjneList.TryGetValue(OjneFigure + currentSoundAnimation.TimeStepList[csv].Ojne, out tempOjne))
+        {
+            Ojne.sprite = tempOjne;
+        }
+        else
+        {
+            Debug.LogError(OjneFigure + currentSoundAnimation.TimeStepList[csv].Ojne + "could not be found");
+        }
+
     }
 }
