@@ -48,23 +48,20 @@ public class AnimationPlayer : MonoBehaviour {
         {
             if(i == currentSoundAnimation.TimeStepList.Count)
             {
-                lort = true;
-                currentSoundAnimation = AnimationDatabase.Instance.IdleSoundAnimation;
                 yield return new WaitForSecondsRealtime(audioTime - timeWaited);
+                currentSoundAnimation = AnimationDatabase.Instance.IdleSoundAnimation;
                 SetSprites(0);
                 AnimatorAssist("0"); // idle
-                StopAllCoroutines();
             }
-            yield return new WaitForSecondsRealtime(currentSoundAnimation.TimeStepList[i].time - timeWaited);
-            timeWaited = currentSoundAnimation.TimeStepList[i].time;
-            SetSprites(i);
-            AnimatorAssist(currentSoundAnimation.TimeStepList[i].Animation);
-            if (lort)
-                Debug.Log("Jeg er blevet løjet for");
-
+            else
+            {
+                yield return new WaitForSecondsRealtime(currentSoundAnimation.TimeStepList[i].time - timeWaited);
+                timeWaited = currentSoundAnimation.TimeStepList[i].time;
+                SetSprites(i);
+                AnimatorAssist(currentSoundAnimation.TimeStepList[i].Animation);
+            }
         }
         
-
         yield return true;
     }
 
