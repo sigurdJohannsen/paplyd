@@ -13,8 +13,10 @@ public class Animal : MonoBehaviour {
                 swappingTakingPlace;
 
     private EventManager eventManager;
+    private AnimationPlayer animationPlayer;
 
     private void Start() {
+        animationPlayer = GetComponent<AnimationPlayer>();
         if (soundAttached != null) {
             soundAttached.SetAnimal(this);
             occupied = true;
@@ -23,19 +25,17 @@ public class Animal : MonoBehaviour {
 
     private void OnEnable() {
         eventManager = FindObjectOfType<EventManager>();
+        eventManager.OnAnimalWasClicked += new OnAnimalWasClickedEventHandler(OnAnimalWasClicked);
     }
 
-    /*public void OnDrop(PointerEventData eventData) {
-        if (hoveringOverValidObject) {
-            occupied = true;
-            Debug.Log("sound dropped here!");
-        }
-        //PolygonCollider2D clickableObject = transform.>
-        //this method might not be needed, as we already have this information in DragHandler. Call an event instead to handle this.
-    }*/
+    private void Disable() {
+        eventManager.OnAnimalWasClicked -= new OnAnimalWasClickedEventHandler(OnAnimalWasClicked);
+    }
 
-    private void OnMouseDown() {
-        eventManager.InvokeAnimalWasClicked();
+    private void OnAnimalWasClicked(Animal animal) {
+        if (animal == this) {
+            StartCoroutine(animationPlayer.PlayAnimation(soundAttached.animationName));
+        }
     }
 
     private void OnMouseOver() {
