@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4556769017485398}
   - component: {fileID: 114764280924295986}
   m_Layer: 0
-  m_Name: Chicken
+  m_Name: Rooster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,6 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e3f84dc850a664da32189798b71e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MundFigure: 
+  OjneFigure: 
+  KropFigure: 
   Mund: {fileID: 212161208506297392}
   Ojne: {fileID: 212873559578091186}
   Krop: {fileID: 212875970452564572}
