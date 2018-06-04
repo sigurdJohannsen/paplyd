@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,6 +10,7 @@ using UnityEngine.EventSystems;
  * */
 public class Sound : MonoBehaviour, IDragHandler, IEndDragHandler {
 
+    public string animationName;
     public Animal myAnimal;
     private Vector3 myPosition;
     private PolygonCollider2D myPolygonCollider;
@@ -18,14 +20,28 @@ public class Sound : MonoBehaviour, IDragHandler, IEndDragHandler {
     private bool dragStarted,
                  iAmBeingDragged;
     private Transform soundSwapPoolTransform;
+    private List<PolygonCollider2D> myPolygonColliderList = new List<PolygonCollider2D>();
 
     public void SetAnimal(Animal animal) {
         myAnimal = animal;
         transform.localPosition = myAnimal.transform.localPosition;
         myPosition = transform.localPosition;
         //  Copy the scale of the animal, to properly scale the polygoncollider for the sound.
-        transform.localScale = myAnimal.GetComponent<Transform>().localScale;
-        myPolygonCollider.SetPath(0, myAnimal.GetComponent<PolygonCollider2D>().GetPath(0));
+        transform.localScale = myAnimal.transform.localScale;
+
+        //  Generate colliders based on current animal.
+        for (int i = 0; i < GetComponents<PolygonCollider2D>().Length; i++) {
+            Destroy(GetComponents<PolygonCollider2D>()[i]);
+        }
+        for (int i = 0; i < myAnimal.GetComponentsInChildren<PolygonCollider2D>().Length; i++) {
+
+            PolygonCollider2D copiedPolygonCollider = myAnimal.GetComponentsInChildren<PolygonCollider2D>()[i].GetCopyOf(myAnimal.GetComponentsInChildren<PolygonCollider2D>()[i]);
+            PolygonCollider2D newPolygonCollider = gameObject.AddComponent(typeof(PolygonCollider2D)) as PolygonCollider2D;
+
+            for (int j = 0; j < copiedPolygonCollider.pathCount; j++) {
+                newPolygonCollider.SetPath(j, copiedPolygonCollider.GetPath(j));
+            }
+        }
     }
 
     private void OnEnable() {
@@ -46,15 +62,12 @@ public class Sound : MonoBehaviour, IDragHandler, IEndDragHandler {
     }
 
     private void Start() {
-        //  Copy the scale of the animal, to properly scale the polygoncollider for the sound.
-        if (myAnimal != null) {
-            transform.localScale = myAnimal.GetComponent<Transform>().localScale;
-        }
         soundSwap = FindObjectOfType<SoundSwap>();
         soundSwapPoolTransform = FindObjectOfType<SoundSwapPool>().transform;
     }
 
     private void OnMouseDown() {
+        Debug.Log("sound clicked!");
         StartCoroutine(WaitForClick());
     }
 
@@ -136,7 +149,7 @@ public class Sound : MonoBehaviour, IDragHandler, IEndDragHandler {
     IEnumerator WaitForClick() {
         yield return new WaitForSeconds(0.3f);
         if (!dragStarted) {
-            eventManager.InvokeAnimalWasClicked();
+            eventManager.InvokeAnimalWasClicked(myAnimal);
         }
     }
 }

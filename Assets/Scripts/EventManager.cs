@@ -6,7 +6,7 @@ public delegate void OnSoundsSwappedEventHandler(Transform origin, Transform tar
 public delegate void OnSwappedSoundReachedDestinationEventHandler();
 public delegate void OnCorrectSoundEventHandler();
 public delegate void OnWrongSoundEventHandler();
-public delegate void OnAnimalWasClickedEventHandler();
+public delegate void OnAnimalWasClickedEventHandler(Animal animal);
 
 public class EventManager : MonoBehaviour {
     public static EventManager instance = null;
@@ -70,10 +70,10 @@ public class EventManager : MonoBehaviour {
         }
     }
 
-    public void InvokeAnimalWasClicked() {
+    public void InvokeAnimalWasClicked(Animal animal) {
         if (OnAnimalWasClicked != null) {
             Debug.Log("EVENT MANAGER: InvokeAnimalWasClicked");
-            OnAnimalWasClicked();
+            OnAnimalWasClicked(animal);
         }
     }
 }
