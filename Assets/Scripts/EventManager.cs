@@ -72,7 +72,7 @@ public class EventManager : MonoBehaviour {
 
     public void InvokeAnimalWasClicked(Animal animal) {
         if (OnAnimalWasClicked != null) {
-            Debug.Log("EVENT MANAGER: InvokeAnimalWasClicked");
+            //Debug.Log("EVENT MANAGER: InvokeAnimalWasClicked");
             OnAnimalWasClicked(animal);
         }
     }

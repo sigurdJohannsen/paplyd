@@ -33,6 +33,7 @@ public class SoundSwap : MonoBehaviour {
     }
 
     private void OnSoundsSwapped(Transform origin, Transform target, SoundSwap soundSwapper) {
+        Debug.Log("sound swap invoked");
         if (soundSwapper == this) {
             transform.SetParent(null);
             renderer.sprite = target.GetComponent<Animal>().soundAttached.GetComponent<SpriteRenderer>().sprite;
@@ -59,8 +60,8 @@ public class SoundSwap : MonoBehaviour {
                 eventManager.InvokeSwappedSoundReachedDestination();
                 Timer = 0;
                 transform.SetParent(soundSwapPoolTransform);
-                swapAnimalA.swappingTakingPlace = false;
-                swapAnimalB.swappingTakingPlace = false;
+                swapAnimalA.busy = false;
+                swapAnimalB.busy = false;
             }
         }
     }
