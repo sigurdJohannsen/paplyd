@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(Animator),typeof(AudioSource))]
 public class AnimationPlayer : MonoBehaviour {
 
     public string MundFigure = "";
@@ -23,14 +23,28 @@ public class AnimationPlayer : MonoBehaviour {
     Animator animator;
     bool lort = false;
 
+    private VibrationAnimation vibrationAnimation;
+
+    public void Awake()
+    {
+        if (!vibrationAnimation && GetComponent<VibrationAnimation>())
+        {
+            vibrationAnimation = GetComponent<VibrationAnimation>();
+        }
+        if (!animator)
+            animator = GetComponent<Animator>();
+    }
 
     private void AnimatorAssist(string value)
     {
         int i;
         int.TryParse(value,out i);
-        if (!animator)
-            animator = GetComponent<Animator>();
+        
         animator.SetInteger("CSV", i);
+        if (vibrationAnimation)
+        {
+            vibrationAnimation.Vibrate(i);
+        }
     }
 
     public IEnumerator PlayAnimation(string tag, Action<bool> animationCallback)
