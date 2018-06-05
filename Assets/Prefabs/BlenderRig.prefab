@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: 4218919362118416}
   - component: {fileID: 114248683625716680}
   - component: {fileID: 114765765812090352}
+  - component: {fileID: 210233200895691350}
   m_Layer: 0
   m_Name: BlenderRig
   m_TagString: Untagged
@@ -112,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1405317143549678}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6, y: 1.59, z: 0}
+  m_LocalPosition: {x: -4.41, y: -0.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4771806177884664}
@@ -189,6 +190,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 179922077fd6872489252040737f5456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!210 &210233200895691350
+SortingGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1405317143549678}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!212 &212179951815327470
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -224,7 +235,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4a316567ea5312a4abc9c886b9a8e928, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 936a8b6f53e8d404eb1c245243d8e4cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -313,7 +324,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 994e55c26470ab94f8ca7f840186cf0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -367,5 +378,5 @@ SpriteRenderer:
   m_Size: {x: 3.67, y: 7.37}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
