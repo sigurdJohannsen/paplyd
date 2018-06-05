@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[RequireComponent(typeof(Animator),typeof(AudioSource))]
+[RequireComponent(typeof(Animator), typeof(AudioSource))]
 public class AnimationPlayer : MonoBehaviour {
 
     public string MundFigure = "";
@@ -18,10 +18,11 @@ public class AnimationPlayer : MonoBehaviour {
     [Header("SpriteRenderers of the prefab")]
     public SpriteRenderer Mund;
     public SpriteRenderer Ojne;
-    public SpriteRenderer Krop;
+    public List<SpriteRenderer> Krop;
 
     Animator animator;
-    bool lort = false;
+
+    private string[] alphabeticInterger= {"","b","c","d" };
 
     private VibrationAnimation vibrationAnimation;
 
@@ -82,14 +83,18 @@ public class AnimationPlayer : MonoBehaviour {
 
     public void SetSprites(int csv)
     {
-        if (AnimationDatabase.Instance.KropList.TryGetValue(KropFigure + currentSoundAnimation.TimeStepList[csv].Krop, out tempKrop))
+        for (int i = 0; i < Krop.Count; i++)
         {
-            Krop.sprite = tempKrop;
+            if (AnimationDatabase.Instance.KropList.TryGetValue(KropFigure + currentSoundAnimation.TimeStepList[csv].Krop + alphabeticInterger[i], out tempKrop))
+            {
+                Krop[i].sprite = tempKrop;
+            }
+            else
+            {
+                Debug.LogError(KropFigure + currentSoundAnimation.TimeStepList[csv].Krop + "could not be found");
+            }
         }
-        else
-        {
-            Debug.LogError(KropFigure + currentSoundAnimation.TimeStepList[csv].Krop + "could not be found");
-        }
+        
         if (AnimationDatabase.Instance.MundList.TryGetValue(MundFigure + currentSoundAnimation.TimeStepList[csv].Mund, out tempMund))
         {
             Mund.sprite = tempMund;
