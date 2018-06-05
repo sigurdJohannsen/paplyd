@@ -9,6 +9,7 @@ public delegate void OnCorrectSoundEventHandler();
 public delegate void OnWrongSoundEventHandler();
 public delegate void OnAnimalWasClickedEventHandler(Animal animal);
 public delegate void OnGameLevelLoadedEventHandler();
+public delegate void OnGameLevelCompletedEventHandler();
 
 public class EventManager : BaseSingleton<EventManager> {
 
@@ -20,6 +21,7 @@ public class EventManager : BaseSingleton<EventManager> {
     public event OnWrongSoundEventHandler OnWrongSound;
     public event OnAnimalWasClickedEventHandler OnAnimalWasClicked;
     public event OnGameLevelLoadedEventHandler OnGameLevelLoaded;
+    public event OnGameLevelCompletedEventHandler OnGameLevelCompleted;
 
     public void InvokeDraggingStarted(Animal animal) {
         if (OnDraggingStarted != null) {
@@ -76,4 +78,11 @@ public class EventManager : BaseSingleton<EventManager> {
             OnGameLevelLoaded();
         }
     }
+
+    public void InvokeGameLevelCompleted() {
+        if (OnGameLevelCompleted != null) {
+            //Debug.Log("EVENT MANAGER: InvokeGameLevelCompleted");
+            OnGameLevelCompleted();
+        }
+    }    
 }

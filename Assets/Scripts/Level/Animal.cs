@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
  * */
 public class Animal : MonoBehaviour, IDragHandler, IEndDragHandler {
     
+    public string animalName;
     public Sound soundAttached;
     public static bool hoveringAboveValidObject;
     public bool hasSound,
@@ -89,6 +90,11 @@ public class Animal : MonoBehaviour, IDragHandler, IEndDragHandler {
                             secondAnimal.soundSwapInProgress = true;
                             eventManager.InvokeSoundsSwapped(secondAnimal.transform, firstAnimal.transform, soundSwapPoolTransform.GetChild(0).GetComponent<SoundSwap>());        //add soundSwap object from soundSwapPool.
                         }
+
+                        //  One of more correct animal was placed!
+                        if ((firstAnimal.animalName == firstAnimal.soundAttached.name) || (secondAnimal.animalName == secondAnimal.soundAttached.name)) {
+                            eventManager.InvokeCorrectSound();
+                        }
                     }
                     else {
                         //  Move sound to empty animal.
@@ -135,7 +141,7 @@ public class Animal : MonoBehaviour, IDragHandler, IEndDragHandler {
         if (this == animal && animal.animalIsReadyToAnimate && !animal.soundSwapInProgress) {
             animalIsReadyToAnimate = false;
             //only allow this if not already engaged in animation.
-            StartCoroutine(animationPlayer.PlayAnimation(soundAttached.animationName, (bool b) => AnimationCallback(b)));
+            StartCoroutine(animationPlayer.PlayAnimation(soundAttached.soundName, (bool b) => AnimationCallback(b)));
         }
     }
 

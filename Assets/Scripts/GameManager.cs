@@ -14,6 +14,7 @@ public class GameManager : BaseSingleton<GameManager> {
     void OnEnable() {
         eventManager = FindObjectOfType<EventManager>();
         SceneManager.sceneLoaded += OnLevelFinishedLoading;
+        eventManager.OnCorrectSound += new OnCorrectSoundEventHandler(OnCorrectSound);
     }
 
     void OnDisable() {
@@ -34,6 +35,21 @@ public class GameManager : BaseSingleton<GameManager> {
 
         if (animalList.Count != 0) {
             eventManager.InvokeGameLevelLoaded();
+        }
+    }
+
+    private void OnCorrectSound() {
+        //  Check if all sounds were correctly placed on all animals!
+        int correctAnimals = 0;
+
+        foreach (Animal animal in FindObjectsOfType<Animal>()) {
+            if ((animal.animalName == animal.soundAttached.name)) {
+                correctAnimals++;
+            }
+        }
+
+        if (correctAnimals == animalList.Count) {
+            eventManager.InvokeGameLevelCompleted();
         }
     }
 }

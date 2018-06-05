@@ -150,16 +150,21 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4148368763420256, guid: a7513be0be06b8c479cbe26bf89eebcf, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 114216816218980154, guid: a7513be0be06b8c479cbe26bf89eebcf,
         type: 2}
       propertyPath: soundAttached
       value: 
-      objectReference: {fileID: 1393451473}
+      objectReference: {fileID: 332455960}
     - target: {fileID: 1553972453149938, guid: a7513be0be06b8c479cbe26bf89eebcf, type: 2}
       propertyPath: m_Name
       value: ElephantRig (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114216816218980154, guid: a7513be0be06b8c479cbe26bf89eebcf,
+        type: 2}
+      propertyPath: animalName
+      value: Elephant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7513be0be06b8c479cbe26bf89eebcf, type: 2}
@@ -286,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60abec7290832a846a4c5e0053b7eae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationName: Monkey
+  soundName: Monkey
   myAnimal: {fileID: 0}
   dinglingColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &247261143
@@ -301,6 +306,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &332455959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 332455961}
+  - component: {fileID: 332455960}
+  m_Layer: 0
+  m_Name: SoundRooster (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &332455960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 332455959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60abec7290832a846a4c5e0053b7eae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: Rooster
+  myAnimal: {fileID: 0}
+  dinglingColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &332455961
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 332455959}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &491403546
 Prefab:
@@ -339,54 +387,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4725804215245756, guid: cc5a740230e641a4c8a3a36a49f738f6, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc5a740230e641a4c8a3a36a49f738f6, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &595000261
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 595000265}
-  - component: {fileID: 595000262}
-  m_Layer: 0
-  m_Name: SoundMonkey
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &595000262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 595000261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60abec7290832a846a4c5e0053b7eae2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationName: Elephant
-  myAnimal: {fileID: 0}
-  dinglingColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!4 &595000265
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 595000261}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &718923778
 Prefab:
   m_ObjectHideFlags: 0
@@ -432,7 +437,7 @@ Prefab:
     - target: {fileID: 224131906971637172, guid: ce62af3dc4996034cafc19472b30d9cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 224131906971637172, guid: ce62af3dc4996034cafc19472b30d9cf,
         type: 2}
@@ -618,16 +623,21 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4949879159509418, guid: 20fbea24664f3db48887dc80ee74b363, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114483462177725280, guid: 20fbea24664f3db48887dc80ee74b363,
         type: 2}
       propertyPath: soundAttached
       value: 
-      objectReference: {fileID: 595000262}
+      objectReference: {fileID: 1486829940}
     - target: {fileID: 1448951804682560, guid: 20fbea24664f3db48887dc80ee74b363, type: 2}
       propertyPath: m_Name
       value: RoosterRig (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114483462177725280, guid: 20fbea24664f3db48887dc80ee74b363,
+        type: 2}
+      propertyPath: animalName
+      value: Rooster
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20fbea24664f3db48887dc80ee74b363, type: 2}
@@ -758,7 +768,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4763661279467230, guid: 7d6fea02da6210f44aaffb91a53694ab, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7d6fea02da6210f44aaffb91a53694ab, type: 2}
@@ -801,6 +811,11 @@ Prefab:
     - target: {fileID: 4073910940871728, guid: cbad6b07f7469bd4491643ebbebb3016, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114110919130917954, guid: cbad6b07f7469bd4491643ebbebb3016,
+        type: 2}
+      propertyPath: soundName
+      value: Elephant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cbad6b07f7469bd4491643ebbebb3016, type: 2}
@@ -966,7 +981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60abec7290832a846a4c5e0053b7eae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationName: Rooster
+  soundName: Rooster
   myAnimal: {fileID: 0}
   dinglingColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1393451476
@@ -982,6 +997,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1486829939
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4073910940871728, guid: cbad6b07f7469bd4491643ebbebb3016, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073910940871728, guid: cbad6b07f7469bd4491643ebbebb3016, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073910940871728, guid: cbad6b07f7469bd4491643ebbebb3016, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073910940871728, guid: cbad6b07f7469bd4491643ebbebb3016, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073910940871728, guid: cbad6b07f7469bd4491643ebbebb3016, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073910940871728, guid: cbad6b07f7469bd4491643ebbebb3016, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073910940871728, guid: cbad6b07f7469bd4491643ebbebb3016, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073910940871728, guid: cbad6b07f7469bd4491643ebbebb3016, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1861758896593556, guid: cbad6b07f7469bd4491643ebbebb3016, type: 2}
+      propertyPath: m_Name
+      value: SoundElephant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114110919130917954, guid: cbad6b07f7469bd4491643ebbebb3016,
+        type: 2}
+      propertyPath: soundName
+      value: Elephant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: cbad6b07f7469bd4491643ebbebb3016, type: 2}
+  m_IsPrefabParent: 0
+--- !u!114 &1486829940 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114110919130917954, guid: cbad6b07f7469bd4491643ebbebb3016,
+    type: 2}
+  m_PrefabInternal: {fileID: 1486829939}
+  m_Script: {fileID: 11500000, guid: 60abec7290832a846a4c5e0053b7eae2, type: 3}
 --- !u!1 &1731688066
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,13 +1242,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4949879159509418, guid: 20fbea24664f3db48887dc80ee74b363, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114483462177725280, guid: 20fbea24664f3db48887dc80ee74b363,
         type: 2}
       propertyPath: soundAttached
       value: 
-      objectReference: {fileID: 247261140}
+      objectReference: {fileID: 1393451473}
+    - target: {fileID: 114483462177725280, guid: 20fbea24664f3db48887dc80ee74b363,
+        type: 2}
+      propertyPath: animalName
+      value: Rooster
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20fbea24664f3db48887dc80ee74b363, type: 2}
   m_IsPrefabParent: 0
@@ -1217,13 +1294,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4148368763420256, guid: a7513be0be06b8c479cbe26bf89eebcf, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 114216816218980154, guid: a7513be0be06b8c479cbe26bf89eebcf,
         type: 2}
       propertyPath: soundAttached
       value: 
       objectReference: {fileID: 175495171}
+    - target: {fileID: 114216816218980154, guid: a7513be0be06b8c479cbe26bf89eebcf,
+        type: 2}
+      propertyPath: animalName
+      value: Elephant
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7513be0be06b8c479cbe26bf89eebcf, type: 2}
   m_IsPrefabParent: 0
@@ -1264,7 +1346,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4892066505368600, guid: 3dece1e3a3085654195138589a85afc0, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3dece1e3a3085654195138589a85afc0, type: 2}
@@ -1308,7 +1390,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2009191848
 GameObject:
@@ -1456,7 +1538,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4183387943007518, guid: 3d2e7b6684084c942a4c86d0633dbc4c, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d2e7b6684084c942a4c86d0633dbc4c, type: 2}

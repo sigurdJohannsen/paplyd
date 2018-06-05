@@ -6,7 +6,7 @@
  * */
 public class Sound : MonoBehaviour {
 
-    public string animationName;
+    public string soundName;
     public Animal myAnimal;
     public Color dinglingColor = Color.white;
 
