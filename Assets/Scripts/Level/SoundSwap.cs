@@ -7,7 +7,7 @@
 public class SoundSwap : MonoBehaviour {
 
     private EventManager eventManager;
-    private new SpriteRenderer renderer;
+    private new SpriteRenderer spriteRenderer;
     private Transform soundSwapPoolTransform;
     private Vector3 startPosition,
                     targetPosition;
@@ -20,7 +20,7 @@ public class SoundSwap : MonoBehaviour {
 
     private void Awake() {
         soundSwapPoolTransform = FindObjectOfType<SoundSwapPool>().transform;
-        renderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnEnable() {
@@ -55,7 +55,8 @@ public class SoundSwap : MonoBehaviour {
         swappingTakingPlace = true;
 
         transform.SetParent(null);
-        renderer.enabled = true;
+        spriteRenderer.color = target.GetComponent<Animal>().soundAttached.dinglingColor;
+        spriteRenderer.enabled = true;
         transform.localPosition = origin.localPosition;
         startPosition = origin.localPosition;
         targetPosition = target.localPosition;
@@ -68,7 +69,7 @@ public class SoundSwap : MonoBehaviour {
         swappingTakingPlace = false;
 
         transform.SetParent(soundSwapPoolTransform);
-        renderer.enabled = false;
+        spriteRenderer.enabled = false;
         Timer = 0;
 
         swapAnimalA.soundSwapInProgress = false;
