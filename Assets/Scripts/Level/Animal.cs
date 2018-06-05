@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 
 /*
  * This script must be placed on all animals.
+ * The scripts allows the player to drag from one animal to another.
  * */
 public class Animal : MonoBehaviour, IDragHandler, IEndDragHandler {
     

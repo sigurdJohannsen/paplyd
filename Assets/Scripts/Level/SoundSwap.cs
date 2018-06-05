@@ -2,7 +2,7 @@
 
 /*
  * This script is used to control the object that fakes the swapped sound's movement from one animal to another.
- * The script also resets swappingTakingPlace for animals involved in the swap.
+ * The script also resets soundSwapInProgress for animals involved in the swap.
  * */
 public class SoundSwap : MonoBehaviour {
 

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using BaseClasses;
+using UnityEngine;
 
 public delegate void OnDraggingStartedEventHandler();
 public delegate void OnDraggingEndedEventHandler();
@@ -8,8 +9,7 @@ public delegate void OnCorrectSoundEventHandler();
 public delegate void OnWrongSoundEventHandler();
 public delegate void OnAnimalWasClickedEventHandler(Animal animal);
 
-public class EventManager : MonoBehaviour {
-    public static EventManager instance = null;
+public class EventManager : BaseSingleton<EventManager> {
 
     public event OnDraggingStartedEventHandler OnDraggingStarted;
     public event OnDraggingEndedEventHandler OnDraggingEnded;
@@ -18,15 +18,6 @@ public class EventManager : MonoBehaviour {
     public event OnCorrectSoundEventHandler OnCorrectSound;
     public event OnWrongSoundEventHandler OnWrongSound;
     public event OnAnimalWasClickedEventHandler OnAnimalWasClicked;
-
-    private void Awake() {
-        if (instance == null) {
-            instance = this;
-        }
-        else if (instance != this) {
-            Destroy(gameObject);
-        }
-    }
 
     public void InvokeDraggingStarted() {
         if (OnDraggingStarted != null) {
