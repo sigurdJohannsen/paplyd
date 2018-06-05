@@ -61,8 +61,8 @@ public class SoundSwap : MonoBehaviour {
                 eventManager.InvokeSwappedSoundReachedDestination();
                 Timer = 0;
                 transform.SetParent(soundSwapPoolTransform);
-                swapAnimalA.busy = false;
-                swapAnimalB.busy = false;
+                swapAnimalA.soundSwapInProgress = false;
+                swapAnimalB.soundSwapInProgress = false;
             }
         }
     }

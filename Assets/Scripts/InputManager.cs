@@ -19,7 +19,7 @@ public class InputManager : MonoBehaviour {
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
 
             if (Physics2D.Raycast(mousePos2D, Vector2.zero)) {
-                if (hit.collider != null && hit.collider.GetComponent<Animal>() != null && !hit.collider.GetComponent<Animal>().busy) {
+                if (hit.collider != null && hit.collider.GetComponent<Animal>() != null && !hit.collider.GetComponent<Animal>().soundSwapInProgress) {
                     animalClicked = hit.collider.GetComponent<Animal>();
                     StartCoroutine(WaitForClick());
                 }
