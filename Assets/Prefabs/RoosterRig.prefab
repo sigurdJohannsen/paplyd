@@ -100,9 +100,8 @@ GameObject:
   - component: {fileID: 114648374477415658}
   - component: {fileID: 95409318376341722}
   - component: {fileID: 82744087518301400}
-  - component: {fileID: 58107198101473358}
-  - component: {fileID: 114768875916930390}
-  - component: {fileID: 210024791823825484}
+  - component: {fileID: 58268094664808794}
+  - component: {fileID: 114483462177725280}
   m_Layer: 8
   m_Name: RoosterRig
   m_TagString: Untagged
@@ -313,7 +312,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &58107198101473358
+--- !u!58 &58268094664808794
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -441,6 +440,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114483462177725280
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1448951804682560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6cfba21bb2d00c4b8a5c6cafd5c4518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundAttached: {fileID: 0}
+  hasSound: 0
+  soundSwapInProgress: 0
+  dragStarted: 0
 --- !u!114 &114648374477415658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -458,31 +472,6 @@ MonoBehaviour:
   Mund: {fileID: 212787805699545744}
   Ojne: {fileID: 212787048481163110}
   Krop: {fileID: 0}
---- !u!114 &114768875916930390
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1448951804682560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6cfba21bb2d00c4b8a5c6cafd5c4518, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundAttached: {fileID: 0}
-  hasSound: 0
-  busy: 0
-  dragStarted: 0
---- !u!210 &210024791823825484
-SortingGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1448951804682560}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!212 &212358538127454164
 SpriteRenderer:
   m_ObjectHideFlags: 1

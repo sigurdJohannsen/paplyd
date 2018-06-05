@@ -177,9 +177,8 @@ GameObject:
   - component: {fileID: 114960139755209730}
   - component: {fileID: 95564274428209186}
   - component: {fileID: 82955019051370264}
-  - component: {fileID: 58356161141823318}
+  - component: {fileID: 58735320442164230}
   - component: {fileID: 114216816218980154}
-  - component: {fileID: 210660190438173132}
   m_Layer: 8
   m_Name: ElephantRig
   m_TagString: Untagged
@@ -578,7 +577,7 @@ Transform:
   m_Father: {fileID: 4148368763420256}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &58356161141823318
+--- !u!58 &58735320442164230
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -719,7 +718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundAttached: {fileID: 0}
   hasSound: 0
-  busy: 0
+  soundSwapInProgress: 0
   dragStarted: 0
 --- !u!114 &114960139755209730
 MonoBehaviour:
@@ -738,16 +737,6 @@ MonoBehaviour:
   Mund: {fileID: 212417790345928216}
   Ojne: {fileID: 212897490769687922}
   Krop: {fileID: 212178075418071508}
---- !u!210 &210660190438173132
-SortingGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1553972453149938}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!212 &212134103589336330
 SpriteRenderer:
   m_ObjectHideFlags: 1

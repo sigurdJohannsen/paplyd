@@ -33,9 +33,9 @@ public class AnimationPlayer : MonoBehaviour {
         animator.SetInteger("CSV", i);
     }
 
-    public IEnumerator PlayAnimation(string tag)
+    public IEnumerator PlayAnimation(string tag, Action<bool> animationCallback)
     {
-        AnimationDatabase.Instance.SoundAnimationDictionary.TryGetValue(tag,out currentSoundAnimation);
+        AnimationDatabase.Instance.SoundAnimationDictionary.TryGetValue(tag, out currentSoundAnimation);
 
         if (!audioSource)
             audioSource = GetComponent<AudioSource>();
@@ -52,6 +52,7 @@ public class AnimationPlayer : MonoBehaviour {
                 currentSoundAnimation = AnimationDatabase.Instance.IdleSoundAnimation;
                 SetSprites(0);
                 AnimatorAssist("0"); // idle
+                animationCallback(true);
             }
             else
             {
@@ -62,7 +63,7 @@ public class AnimationPlayer : MonoBehaviour {
             }
         }
         
-        yield return true;
+        yield return animationCallback;
     }
 
     public void SetSprites(int csv)

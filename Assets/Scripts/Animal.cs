@@ -9,7 +9,7 @@ public class Animal : MonoBehaviour, IDragHandler, IEndDragHandler {
     public Sound soundAttached;
     public static bool hoveringAboveValidObject;
     public bool hasSound,
-                busy,
+                soundSwapInProgress,
                 dragStarted;
 
     private AnimationPlayer animationPlayer;
@@ -19,6 +19,7 @@ public class Animal : MonoBehaviour, IDragHandler, IEndDragHandler {
                       currentDingling;
     private Vector3 startPosition,
                     targetPosition;
+    private bool animalIsReadyToAnimate = true;
 
     private void Awake() {
         inputManager = FindObjectOfType<InputManager>();
@@ -49,7 +50,7 @@ public class Animal : MonoBehaviour, IDragHandler, IEndDragHandler {
         //update dingling position
         currentDingling.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
 
-        if (!dragStarted && !busy) {
+        if (!dragStarted && !soundSwapInProgress) {
             currentDingling.GetComponent<SpriteRenderer>().enabled = true;
             dragStarted = true;
             eventManager.InvokeDraggingStarted();
@@ -65,33 +66,35 @@ public class Animal : MonoBehaviour, IDragHandler, IEndDragHandler {
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
 
             if (hit.collider != null) {
-                if (hoveringAboveValidObject && !hit.transform.GetComponent<Animal>().busy && hit.transform != transform) {
-                    //Debug.Log("is busy= " + hit.transform.GetComponent<Animal>().busy);
+                if (hoveringAboveValidObject && !hit.transform.GetComponent<Animal>().soundSwapInProgress && hit.transform != transform) {
+                    Animal secondAnimal = hit.transform.GetComponent<Animal>();
+                    //Debug.Log("is soundSwapInProgress= " + hit.transform.GetComponent<Animal>().soundSwapInProgress);
                     //  Snap sound to the new animal.
                     targetPosition = hit.transform.localPosition;
                     startPosition = transform.localPosition;
 
-                    if (hit.transform.GetComponent<Animal>().hasSound) {
-                        Sound otherAttachedSound = hit.transform.GetComponent<Animal>().soundAttached;
-                        Animal thisAnimal = inputManager.animalClicked;
+                    if (secondAnimal.hasSound) {
+                        Sound otherAttachedSound = secondAnimal.soundAttached;
+                        Animal firstAnimal = inputManager.animalClicked;
                         //  Swap sounds between animals.
-                        hit.transform.GetComponent<Animal>().soundAttached = inputManager.animalClicked.soundAttached;
-                        SetAnimal(hit.transform.GetComponent<Animal>());
-                        thisAnimal.soundAttached = otherAttachedSound;
-                        otherAttachedSound.SetCurrentAnimal(thisAnimal);
+                        secondAnimal.soundAttached = inputManager.animalClicked.soundAttached;
+                        SetClickedAnimal(secondAnimal);
+                        firstAnimal.soundAttached = otherAttachedSound;
+                        firstAnimal.soundAttached.SetCurrentAnimal(secondAnimal);
+                        otherAttachedSound.SetCurrentAnimal(firstAnimal);
 
                         if (soundSwapPoolTransform.GetChild(0) != null) {
-                            thisAnimal.busy = true;
-                            hit.transform.GetComponent<Animal>().busy = true;
-                            eventManager.InvokeSoundsSwapped(hit.transform.GetComponent<Animal>().transform, thisAnimal.transform, soundSwapPoolTransform.GetChild(0).GetComponent<SoundSwap>());        //add soundSwap object from soundSwapPool.
+                            firstAnimal.soundSwapInProgress = true;
+                            secondAnimal.soundSwapInProgress = true;
+                            eventManager.InvokeSoundsSwapped(secondAnimal.transform, firstAnimal.transform, soundSwapPoolTransform.GetChild(0).GetComponent<SoundSwap>());        //add soundSwap object from soundSwapPool.
                         }
                     }
                     else {
                         //  Move sound to empty animal.
-                        hit.transform.GetComponent<Animal>().hasSound = true;
-                        hit.transform.GetComponent<Animal>().soundAttached = inputManager.animalClicked.soundAttached;
+                        secondAnimal.hasSound = true;
+                        secondAnimal.soundAttached = inputManager.animalClicked.soundAttached;
 
-                        SetAnimal(hit.transform.GetComponent<Animal>());
+                        SetClickedAnimal(secondAnimal);
                         if (inputManager.animalClicked != null) {
                             inputManager.animalClicked.hasSound = false;
                             inputManager.animalClicked.soundAttached = null;
@@ -99,25 +102,24 @@ public class Animal : MonoBehaviour, IDragHandler, IEndDragHandler {
                     }
                 }
                 else {
-                    //  If sound is dropped inside of designated area, but animal is busy, return sound to origin.
+                    //  If sound is dropped inside of designated area, but animal has soundSwapInProgress, return sound to origin.
                     currentDingling.transform.transform.localPosition = startPosition;
-                    busy = false;
+                    soundSwapInProgress = false;
                 }
             }
             else {
                 //  If sound is dropped outside of designated area, return sound to origin.
                 currentDingling.transform.transform.localPosition = startPosition;
-                busy = false;
+                soundSwapInProgress = false;
             }
             eventManager.InvokeDraggingEnded();
         }
     }
 
-    public void SetAnimal(Animal animal) {
+    public void SetClickedAnimal(Animal animal) {
         inputManager.animalClicked = animal;
         currentDingling.transform.localPosition = inputManager.animalClicked.transform.localPosition;
         startPosition = currentDingling.transform.localPosition;
-        //currentDingling.transform.localScale = inputManager.animalClicked.transform.localScale;
     }
 
     private void OnMouseOver() {
@@ -129,10 +131,15 @@ public class Animal : MonoBehaviour, IDragHandler, IEndDragHandler {
     }
 
     private void OnAnimalWasClicked(Animal animal) {
-        if (this == animal) {
+        if (this == animal && animal.animalIsReadyToAnimate && !animal.soundSwapInProgress) {
+            animalIsReadyToAnimate = false;
             //only allow this if not already engaged in animation.
-            StartCoroutine(animationPlayer.PlayAnimation(soundAttached.animationName));
+            StartCoroutine(animationPlayer.PlayAnimation(soundAttached.animationName, (bool b) => AnimationCallback(b)));
         }
+    }
+
+    private void AnimationCallback(bool b) {
+        animalIsReadyToAnimate = b;
     }
 
     private void OnDraggingEnded() {
