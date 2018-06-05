@@ -736,7 +736,8 @@ MonoBehaviour:
   KropFigure: Elephant
   Mund: {fileID: 212417790345928216}
   Ojne: {fileID: 212897490769687922}
-  Krop: {fileID: 212178075418071508}
+  Krop:
+  - {fileID: 212178075418071508}
 --- !u!212 &212134103589336330
 SpriteRenderer:
   m_ObjectHideFlags: 1

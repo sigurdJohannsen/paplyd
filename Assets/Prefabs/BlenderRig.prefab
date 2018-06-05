@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4943034270473264}
   - component: {fileID: 212716366093564052}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Krop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,9 @@ GameObject:
   - component: {fileID: 95847584843313204}
   - component: {fileID: 82326247903977314}
   - component: {fileID: 114760412295490416}
-  m_Layer: 0
+  - component: {fileID: 114771968534440112}
+  - component: {fileID: 60932264521847354}
+  m_Layer: 8
   m_Name: BlenderRig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +59,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4154916293033002}
   - component: {fileID: 212736001741660832}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mund
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +75,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4779687176856944}
   - component: {fileID: 212179951815327470}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BlenderBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4856482121822260}
   - component: {fileID: 212082650165412040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BlenderBodyBot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4771806177884664}
   - component: {fileID: 212229569082467304}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ojne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,8 +134,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1405317143549678}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.610085, y: -2.0335455, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.88, y: 3.13, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4771806177884664}
   - {fileID: 4779687176856944}
@@ -195,6 +197,36 @@ Transform:
   m_Father: {fileID: 4218919362118416}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.749}
+--- !u!60 &60932264521847354
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1405317143549678}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.4396043, y: 1.6965814}
+      - {x: -0.90461826, y: -1.8736057}
+      - {x: -1.6558785, y: -3.3167133}
+      - {x: 1.7951946, y: -3.4095912}
+      - {x: 0.975338, y: -1.6708431}
+      - {x: 1.2296906, y: 1.74862}
 --- !u!82 &82326247903977314
 AudioSource:
   m_ObjectHideFlags: 1
@@ -355,6 +387,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 179922077fd6872489252040737f5456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114771968534440112
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1405317143549678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6cfba21bb2d00c4b8a5c6cafd5c4518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundAttached: {fileID: 0}
+  hasSound: 0
+  soundSwapInProgress: 0
+  dragStarted: 0
 --- !u!210 &210233200895691350
 SortingGroup:
   m_ObjectHideFlags: 1

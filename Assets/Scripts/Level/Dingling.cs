@@ -10,8 +10,8 @@ public class Dingling : MonoBehaviour {
     
     private EventManager eventManager;
     private Transform dingling;
-    private Color color;
-    private List<SpriteRenderer> spriteRendererList = new List<SpriteRenderer>();
+    public SpriteRenderer SpriteColorChange;
+     private List<SpriteRenderer> spriteRendererList = new List<SpriteRenderer>();
 
     private void OnEnable() {
         eventManager = FindObjectOfType<EventManager>();
@@ -30,9 +30,7 @@ public class Dingling : MonoBehaviour {
     }
 
     private void OnDraggingStarted(Animal animal) {
-        foreach (SpriteRenderer spriteRenderer in spriteRendererList) {
-            spriteRenderer.color = animal.soundAttached.dinglingColor;
-        }
+        SpriteColorChange.color = animal.soundAttached.dinglingColor;
         dingling.gameObject.SetActive(true);
     }
 
