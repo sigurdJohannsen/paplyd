@@ -63,7 +63,7 @@ public class AnimationPlayer : MonoBehaviour {
             }
         }
         
-        yield return animationCallback;
+        yield return true;
     }
 
     public void SetSprites(int csv)
