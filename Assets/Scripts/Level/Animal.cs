@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 /*
  * This script must be placed on all animals.
  * The scripts allows the player to drag from one animal to another.
+ * The script updates the position of the dragged dingling.
  * */
 public class Animal : MonoBehaviour, IDragHandler, IEndDragHandler {
     
@@ -16,8 +17,8 @@ public class Animal : MonoBehaviour, IDragHandler, IEndDragHandler {
     private AnimationPlayer animationPlayer;
     private EventManager eventManager;
     private InputManager inputManager;
-    private Transform soundSwapPoolTransform,
-                      currentDingling;
+    private Transform soundSwapPoolTransform;
+    private Dingling currentDingling;
     private Vector3 startPosition,
                     targetPosition;
     private bool animalIsReadyToAnimate = true;
@@ -28,11 +29,11 @@ public class Animal : MonoBehaviour, IDragHandler, IEndDragHandler {
 
     private void Start() {
         soundSwapPoolTransform = FindObjectOfType<SoundSwapPool>().transform;
-        currentDingling = FindObjectOfType<Dingling>().transform;
         if (soundAttached != null) {
             hasSound = true;
         }
         soundAttached.SetCurrentAnimal(this);   //  Used for debugging current position of sounds, in a visual way.
+        currentDingling = FindObjectOfType<Dingling>();
     }
 
     private void OnEnable() {
@@ -52,9 +53,8 @@ public class Animal : MonoBehaviour, IDragHandler, IEndDragHandler {
         currentDingling.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
 
         if (!dragStarted && !soundSwapInProgress) {
-            currentDingling.GetComponent<SpriteRenderer>().enabled = true;
             dragStarted = true;
-            eventManager.InvokeDraggingStarted();
+            eventManager.InvokeDraggingStarted(this);
         }
     }
     
@@ -145,6 +145,5 @@ public class Animal : MonoBehaviour, IDragHandler, IEndDragHandler {
 
     private void OnDraggingEnded() {
         dragStarted = false;
-        currentDingling.GetComponent<SpriteRenderer>().enabled = false;
     }
 }

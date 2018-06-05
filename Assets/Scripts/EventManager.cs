@@ -1,13 +1,14 @@
 ﻿using BaseClasses;
 using UnityEngine;
 
-public delegate void OnDraggingStartedEventHandler();
+public delegate void OnDraggingStartedEventHandler(Animal animal);
 public delegate void OnDraggingEndedEventHandler();
 public delegate void OnSoundsSwappedEventHandler(Transform origin, Transform target, SoundSwap soundSwapper);
 public delegate void OnSwappedSoundReachedDestinationEventHandler();
 public delegate void OnCorrectSoundEventHandler();
 public delegate void OnWrongSoundEventHandler();
 public delegate void OnAnimalWasClickedEventHandler(Animal animal);
+public delegate void OnGameLevelLoadedEventHandler();
 
 public class EventManager : BaseSingleton<EventManager> {
 
@@ -18,11 +19,12 @@ public class EventManager : BaseSingleton<EventManager> {
     public event OnCorrectSoundEventHandler OnCorrectSound;
     public event OnWrongSoundEventHandler OnWrongSound;
     public event OnAnimalWasClickedEventHandler OnAnimalWasClicked;
+    public event OnGameLevelLoadedEventHandler OnGameLevelLoaded;
 
-    public void InvokeDraggingStarted() {
+    public void InvokeDraggingStarted(Animal animal) {
         if (OnDraggingStarted != null) {
             //Debug.Log("EVENT MANAGER: InvokeDraggingStarted");
-            OnDraggingStarted();
+            OnDraggingStarted(animal);
         }
     }
 
@@ -65,6 +67,13 @@ public class EventManager : BaseSingleton<EventManager> {
         if (OnAnimalWasClicked != null) {
             //Debug.Log("EVENT MANAGER: InvokeAnimalWasClicked");
             OnAnimalWasClicked(animal);
+        }
+    }
+
+    public void InvokeGameLevelLoaded() {
+        if (OnGameLevelLoaded != null) {
+            //Debug.Log("EVENT MANAGER: InvokeGameLevelLoaded");
+            OnGameLevelLoaded();
         }
     }
 }

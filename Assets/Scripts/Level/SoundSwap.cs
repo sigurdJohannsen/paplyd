@@ -34,17 +34,7 @@ public class SoundSwap : MonoBehaviour {
 
     private void OnSoundsSwapped(Transform origin, Transform target, SoundSwap soundSwapper) {
         if (soundSwapper == this) {
-            //Debug.Log("sound swap invoked");
-            transform.SetParent(null);
-            renderer.sprite = target.GetComponent<Animal>().soundAttached.GetComponent<SpriteRenderer>().sprite;
-            renderer.enabled = true;
-            transform.localPosition = origin.localPosition;
-            startPosition = origin.localPosition;
-            targetPosition = target.localPosition;
-            swappingTakingPlace = true;
-
-            swapAnimalA = origin.GetComponent<Animal>();
-            swapAnimalB = target.GetComponent<Animal>();
+            StartSwapProcess(origin, target);
         }
     }
 
@@ -55,15 +45,33 @@ public class SoundSwap : MonoBehaviour {
                 transform.position = Vector3.Lerp(startPosition, targetPosition, Timer);
             }
             else {
-                //Debug.Log("sound swap reached endpoint");
-                swappingTakingPlace = false;
-                renderer.enabled = false;
                 eventManager.InvokeSwappedSoundReachedDestination();
-                Timer = 0;
-                transform.SetParent(soundSwapPoolTransform);
-                swapAnimalA.soundSwapInProgress = false;
-                swapAnimalB.soundSwapInProgress = false;
+                EndSwapProcess();
             }
         }
+    }
+
+    private void StartSwapProcess(Transform origin, Transform target) {
+        swappingTakingPlace = true;
+
+        transform.SetParent(null);
+        renderer.enabled = true;
+        transform.localPosition = origin.localPosition;
+        startPosition = origin.localPosition;
+        targetPosition = target.localPosition;
+
+        swapAnimalA = origin.GetComponent<Animal>();
+        swapAnimalB = target.GetComponent<Animal>();
+    }
+
+    private void EndSwapProcess() {
+        swappingTakingPlace = false;
+
+        transform.SetParent(soundSwapPoolTransform);
+        renderer.enabled = false;
+        Timer = 0;
+
+        swapAnimalA.soundSwapInProgress = false;
+        swapAnimalB.soundSwapInProgress = false;
     }
 }
