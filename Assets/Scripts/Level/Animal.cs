@@ -14,7 +14,6 @@ public class Animal : MonoBehaviour, IDragHandler, IEndDragHandler {
     public bool hasSound,
                 soundSwapInProgress,
                 dragStarted;
-
     private AnimationPlayer animationPlayer;
     private EventManager eventManager;
     private InputManager inputManager;
