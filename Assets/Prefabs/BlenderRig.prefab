@@ -37,12 +37,10 @@ GameObject:
   - component: {fileID: 4218919362118416}
   - component: {fileID: 114398298965907570}
   - component: {fileID: 114248683625716680}
-  - component: {fileID: 114765765812090352}
   - component: {fileID: 210233200895691350}
   - component: {fileID: 82326247903977314}
   - component: {fileID: 114760412295490416}
   - component: {fileID: 60932264521847354}
-  - component: {fileID: 82268896970092690}
   - component: {fileID: 95342344644383300}
   m_Layer: 8
   m_Name: BlenderRig
@@ -135,7 +133,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1405317143549678}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -8, y: 6.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4771806177884664}
@@ -228,101 +226,6 @@ PolygonCollider2D:
       - {x: 1.7951946, y: -3.4095912}
       - {x: 0.975338, y: -1.6708431}
       - {x: 1.2296906, y: 1.74862}
---- !u!82 &82268896970092690
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1405317143549678}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!82 &82326247903977314
 AudioSource:
   m_ObjectHideFlags: 1
@@ -467,9 +370,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animal: Blender
   Sound:
-    Sound: Monkey
+    Sound: Blender
     Color: {r: 1, g: 0, b: 0, a: 1}
-  ScaleIncreasePercentage: 20
+  ScaleIncreasePercentage: 5
 --- !u!114 &114760412295490416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -488,17 +391,6 @@ MonoBehaviour:
   - {fileID: 4154916293033002}
   - {fileID: 4771806177884664}
   - {fileID: 4856482121822260}
---- !u!114 &114765765812090352
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1405317143549678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 179922077fd6872489252040737f5456, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!210 &210233200895691350
 SortingGroup:
   m_ObjectHideFlags: 1
@@ -637,7 +529,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 353513acab2302e4dbd0081b315b7fc3, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7585, g: 1, b: 0.685, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
