@@ -30,7 +30,7 @@ public class GameManager : BaseSingleton<GameManager> {
         }
         foreach (Sound sound in FindObjectsOfType<Sound>()) {
             soundList.Add(sound);
-            sound.dinglingColor = colorList[soundList.Count - 1];
+            sound.Color = colorList[soundList.Count - 1];
         }
 
         if (animalList.Count != 0) {

@@ -140,12 +140,12 @@ public class Animal : MonoBehaviour, IDragHandler, IEndDragHandler {
         if (this == animal && animal.animalIsReadyToAnimate && !animal.soundSwapInProgress) {
             animalIsReadyToAnimate = false;
             //only allow this if not already engaged in animation.
-            StartCoroutine(animationPlayer.PlayAnimation(soundAttached.soundName, (bool b) => AnimationCallback(b)));
+            StartCoroutine(animationPlayer.PlayAnimation(soundAttached.soundName, () => AnimationCallback()));
         }
     }
 
-    private void AnimationCallback(bool b) {
-        animalIsReadyToAnimate = b;
+    private void AnimationCallback() {
+        animalIsReadyToAnimate = true;
     }
 
     private void OnDraggingEnded() {

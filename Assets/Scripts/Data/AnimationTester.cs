@@ -14,19 +14,19 @@ public class AnimationTester : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.M) && !playing)
         {
             playing = true;
-            StartCoroutine(ap.PlayAnimation("Monkey", (bool b) => AnimationCallback(b)));
+            StartCoroutine(ap.PlayAnimation("Monkey", () => AnimationCallback()));
         }
         if (Input.GetKeyDown(KeyCode.R) && !playing)
         {
             playing = true;
-            StartCoroutine(ap.PlayAnimation("Rooster", (bool b) => AnimationCallback(b)));
+            StartCoroutine(ap.PlayAnimation("Rooster", () => AnimationCallback()));
         }
         if (Input.GetKeyDown(KeyCode.E) && !playing)
         {
             playing = true;
-            StartCoroutine(ap.PlayAnimation("Elephant", (bool b) => AnimationCallback(b)));
+            StartCoroutine(ap.PlayAnimation("Elephant", () => AnimationCallback()));
         }
     }
 
-    private void AnimationCallback(bool b) { playing = false; }
+    private void AnimationCallback() { playing = false; }
 }

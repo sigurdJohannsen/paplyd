@@ -55,7 +55,7 @@ public class SoundSwap : MonoBehaviour {
         swappingTakingPlace = true;
 
         transform.SetParent(null);
-        spriteRenderer.color = target.GetComponent<Animal>().soundAttached.dinglingColor;
+        spriteRenderer.color = target.GetComponent<Animal>().soundAttached.Color;
         spriteRenderer.enabled = true;
         transform.localPosition = origin.localPosition;
         startPosition = origin.localPosition;

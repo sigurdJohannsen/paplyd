@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 [RequireComponent(typeof(Animator), typeof(AudioSource))]
 public class AnimationPlayer : MonoBehaviour {
 
@@ -28,6 +30,7 @@ public class AnimationPlayer : MonoBehaviour {
 
     public void Awake()
     {
+        
         if (!vibrationAnimation && GetComponent<VibrationAnimation>())
         {
             vibrationAnimation = GetComponent<VibrationAnimation>();
@@ -48,7 +51,7 @@ public class AnimationPlayer : MonoBehaviour {
         }
     }
 
-    public IEnumerator PlayAnimation(string tag, Action<bool> animationCallback)
+    public IEnumerator PlayAnimation(string tag, UnityAction animationCallback)
     {
         AnimationDatabase.Instance.SoundAnimationDictionary.TryGetValue(tag, out currentSoundAnimation);
 
@@ -67,7 +70,7 @@ public class AnimationPlayer : MonoBehaviour {
                 currentSoundAnimation = AnimationDatabase.Instance.IdleSoundAnimation;
                 SetSprites(0);
                 AnimatorAssist("0"); // idle
-                animationCallback(true);
+                animationCallback();
             }
             else
             {

@@ -29,9 +29,8 @@ public class VibrationAnimation : MonoBehaviour {
     }
     public void Vibrate(int animation)
     {
-        Debug.Log(animation + " VIBRATION");
         animationID = animation;
-        //ResetPositions();
+        ResetPositions();
         switch (animation)
         {
             case 0:
@@ -60,7 +59,7 @@ public class VibrationAnimation : MonoBehaviour {
     }
     private void VibrateAnimation(float VibrateAmount)
     {
-        Debug.Log(VibrateAmount * VibrationVolume + " vibration");
+        
         for (int i = 0; i < ListOfVibrationElements.Count; i++)
         {
             ListOfVibrationElements[i].localPosition +=  Random.insideUnitSphere * VibrateAmount * VibrationVolume;

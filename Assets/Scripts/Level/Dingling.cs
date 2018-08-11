@@ -30,7 +30,7 @@ public class Dingling : MonoBehaviour {
     }
 
     private void OnDraggingStarted(Animal animal) {
-        SpriteColorChange.color = animal.soundAttached.dinglingColor;
+        SpriteColorChange.color = animal.soundAttached.Color;
         dingling.gameObject.SetActive(true);
     }
 

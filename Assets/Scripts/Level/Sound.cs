@@ -8,7 +8,7 @@ public class Sound : MonoBehaviour {
 
     public string soundName;
     public Animal myAnimal;
-    public Color dinglingColor = Color.white;
+    public Color Color = Color.white;
 
     private Vector3 myPosition;
     

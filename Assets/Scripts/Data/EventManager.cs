@@ -1,6 +1,8 @@
 ﻿using BaseClasses;
 using UnityEngine;
-
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
+using System;
 public delegate void OnDraggingStartedEventHandler(Animal animal);
 public delegate void OnDraggingEndedEventHandler();
 public delegate void OnSoundsSwappedEventHandler(Transform origin, Transform target, SoundSwap soundSwapper);
@@ -12,6 +14,16 @@ public delegate void OnGameLevelLoadedEventHandler();
 public delegate void OnGameLevelCompletedEventHandler();
 
 public class EventManager : BaseSingleton<EventManager> {
+
+
+    public static Action<bool> OnInteractionAvailable;
+
+    public static bool InteractionAvailable = true;
+    private void Awake()
+    {
+        OnInteractionAvailable += (bool on) => { InteractionAvailable = on; };
+    }
+
 
     public event OnDraggingStartedEventHandler OnDraggingStarted;
     public event OnDraggingEndedEventHandler OnDraggingEnded;

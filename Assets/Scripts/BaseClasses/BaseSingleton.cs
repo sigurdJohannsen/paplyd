@@ -24,21 +24,6 @@ namespace BaseClasses
                 DestroySelf();
         }
 
-//        protected void OnValidate()
-//        {
-//            if (instance == null)
-//                instance = this as T;
-//            else if (instance != this)
-//            {
-//                Debug.LogError("Singleton<" + this.GetType() + "> already has an instance on scene. Component will be destroyed.");
-//#if UNITY_EDITOR
-//             UnityEditor.EditorApplication.delayCall -= DestroySelf;
-//             UnityEditor.EditorApplication.delayCall += DestroySelf;    
-//#endif
-//            }
-//        }
-
-
         private void DestroySelf()
         {
             if (Application.isPlaying)
