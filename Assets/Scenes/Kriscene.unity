@@ -10560,6 +10560,11 @@ Prefab:
       propertyPath: ScaleIncreasePercentage
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114398298965907570, guid: e3b64bd60eae9dd46bb1cbd8aa77ca8b,
+        type: 2}
+      propertyPath: Sound.Sound
+      value: Blender
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 82268896970092690, guid: e3b64bd60eae9dd46bb1cbd8aa77ca8b, type: 2}
     - {fileID: 114765765812090352, guid: e3b64bd60eae9dd46bb1cbd8aa77ca8b, type: 2}
