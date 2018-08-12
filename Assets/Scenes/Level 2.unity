@@ -845,6 +845,12 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 198889051507999490, guid: 124787fb6234fd24d8fbe6a452e47c75,
     type: 2}
   m_PrefabInternal: {fileID: 1381325472}
+--- !u!114 &1135541886 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114671716663907102, guid: 124787fb6234fd24d8fbe6a452e47c75,
+    type: 2}
+  m_PrefabInternal: {fileID: 1381325472}
+  m_Script: {fileID: 11500000, guid: 9ee340861be127747a9b2f1a602de5e0, type: 3}
 --- !u!4 &1158875171 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4216146481564728, guid: fa4f8fef51c6f9f4c84d49c98f30ced7,
@@ -1253,7 +1259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SecondsToDrag: 0.25
   _secondsOfDrag: 0
-  particleFeedbackSystem: {fileID: 0}
+  particleFeedbackSystem: {fileID: 1135541886}
   FollowGraphic: {fileID: 1400052684}
   GrabGraphic: {fileID: 559538398}
   DropGraphic: {fileID: 1039698499}
