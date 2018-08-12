@@ -445,6 +445,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0543793
       objectReference: {fileID: 0}
+    - target: {fileID: 114300033687378860, guid: cf03f66697d22a54aba1b2f1fbb159e9,
+        type: 2}
+      propertyPath: Sound.Sound
+      value: Cat
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf03f66697d22a54aba1b2f1fbb159e9, type: 2}
   m_IsPrefabAsset: 0
@@ -14896,6 +14901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bee15e3e893f4b44784569b3697be24a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSwapFeedback: {fileID: 0}
 --- !u!4 &1607643561
 Transform:
   m_ObjectHideFlags: 0
@@ -14938,6 +14944,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SecondsToDrag: 0.25
   _secondsOfDrag: 0
+  particleFeedbackSystem: {fileID: 0}
   FollowGraphic: {fileID: 1400052684}
   GrabGraphic: {fileID: 559538398}
   DropGraphic: {fileID: 1039698499}
