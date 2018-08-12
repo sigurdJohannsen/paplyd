@@ -26,19 +26,22 @@ public class TouchManager : BaseSingleton<TouchManager>
     private GameObject _firstClickObject;
     private new void Awake()
     {
-        FollowGraphic.gameObject.SetActive(false);
-        GrabGraphic.gameObject.SetActive(false);
-        DropGraphic.gameObject.SetActive(false);
+       
         Input.simulateMouseWithTouches = true;
         base.Awake();
     }
     public void GrabEffect()
     {
-        StartCoroutine(GrapEffectCoroutine());
+        particleFeedbackSystem.StartDrag(_firstClickObject);
+    }
+    public void StopEffect()
+    {
+        particleFeedbackSystem.StopAll();
+
     }
     public void DropEffect()
     {
-
+        particleFeedbackSystem.EndDrag();
     }
     private void SetParticleColor(ParticleSystem ps)
     {
@@ -50,7 +53,6 @@ public class TouchManager : BaseSingleton<TouchManager>
         GrabGraphic.gameObject.SetActive(true);
         SetParticleColor(GrabGraphic);
         GrabGraphic.Play();
-        ParticleSystem.ShapeModule shapeModule = GrabGraphic.shape;
         Vector3 size = Vector3.one;
         if (_firstClickObject.GetComponent<PolygonCollider2D>())
         {
@@ -145,6 +147,7 @@ public class TouchManager : BaseSingleton<TouchManager>
     {
         if (!_raycastHit2D.collider)
         {
+            StopEffect();
             _firstClickObject = null;
             _dragging = false;
             return;
@@ -159,6 +162,7 @@ public class TouchManager : BaseSingleton<TouchManager>
         if (_raycastHit2D.collider && _firstClickObject)
         {
             _firstClickObject.SendMessage("OnClickDragEnd");
+            DropEffect();
             SwapManager.Instance.SwapSounds(_firstClickObject, _raycastHit2D.collider.gameObject);
             _firstClickObject = null;
             _dragging = false;
