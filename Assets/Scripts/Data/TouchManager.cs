@@ -39,9 +39,9 @@ public class TouchManager : BaseSingleton<TouchManager>
         particleFeedbackSystem.StopAll();
 
     }
-    public void DropEffect()
+    public void DropEffect(GameObject go)
     {
-        particleFeedbackSystem.EndDrag();
+        particleFeedbackSystem.EndDrag(go);
     }
     private void SetParticleColor(ParticleSystem ps)
     {
@@ -104,12 +104,24 @@ public class TouchManager : BaseSingleton<TouchManager>
             }
             return;
         }
+        if(_colliderEnter == null)
+        {
+            _colliderEnter = _raycastHit2D.collider;
+            _colliderEnter.SendMessage("OnFocusEnter");
+            return;
+        }
+        if(_raycastHit2D.collider != _colliderEnter)
+        {
+            _colliderEnter.gameObject.SendMessage("OnFocusExit");
+            _colliderEnter = _raycastHit2D.collider;
+            _colliderEnter.gameObject.SendMessage("OnFocusEnter");
+            return;
+        }
         if (_raycastHit2D.collider == _colliderEnter)
         {
             return;
         }
-        _colliderEnter = _raycastHit2D.collider;
-        _colliderEnter.SendMessage("OnFocusEnter");
+      
     }
 
     private void Update()
@@ -162,7 +174,7 @@ public class TouchManager : BaseSingleton<TouchManager>
         if (_raycastHit2D.collider && _firstClickObject)
         {
             _firstClickObject.SendMessage("OnClickDragEnd");
-            DropEffect();
+            DropEffect(_raycastHit2D.collider.gameObject);
             SwapManager.Instance.SwapSounds(_firstClickObject, _raycastHit2D.collider.gameObject);
             _firstClickObject = null;
             _dragging = false;
