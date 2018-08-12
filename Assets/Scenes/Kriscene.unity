@@ -10174,6 +10174,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.79225
       objectReference: {fileID: 0}
+    - target: {fileID: 114398298965907570, guid: e3b64bd60eae9dd46bb1cbd8aa77ca8b,
+        type: 2}
+      propertyPath: Sound.Sound
+      value: TelephoneRing
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3b64bd60eae9dd46bb1cbd8aa77ca8b, type: 2}
   m_IsPrefabAsset: 0
@@ -15135,7 +15140,7 @@ Prefab:
     - target: {fileID: 114746162292669694, guid: fa4f8fef51c6f9f4c84d49c98f30ced7,
         type: 2}
       propertyPath: Sound.Sound
-      value: Toaster
+      value: CarHonk
       objectReference: {fileID: 0}
     - target: {fileID: 212836356658074922, guid: fa4f8fef51c6f9f4c84d49c98f30ced7,
         type: 2}
