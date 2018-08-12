@@ -22,7 +22,6 @@ public class SoundContainer : MonoBehaviour {
 
     public void Start()
     {
-
         scale = transform.localScale;
     }
     public void OnClick()

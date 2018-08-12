@@ -11,11 +11,12 @@ public class TouchManager : BaseSingleton<TouchManager>
     RaycastHit _raycastHit;
     RaycastHit2D _raycastHit2D;
     Collider2D _colliderEnter;
-    Ray ray;
+    public Ray ray;
     public float SecondsToDrag = 0.000f;
     [SerializeField]
     private float _secondsOfDrag = 0.0f;
 
+    public ParticleFeedbackSystem particleFeedbackSystem;
     public ParticleSystem FollowGraphic;
     public ParticleSystem GrabGraphic;
     public ParticleSystem DropGraphic;
