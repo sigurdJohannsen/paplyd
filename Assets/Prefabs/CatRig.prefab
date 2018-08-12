@@ -429,7 +429,7 @@ MonoBehaviour:
   Animal: Cat
   Sound:
     Sound: Monkey
-    Color: {r: 0.32358837, g: 1, b: 0, a: 0}
+    Color: {r: 1, g: 0.6954005, b: 0, a: 1}
   ScaleIncreasePercentage: 5
 --- !u!210 &210405667275780638
 SortingGroup:
