@@ -12,6 +12,38 @@ public class ParticleFeedbackSystem : MonoBehaviour {
     ParticleSystem Start,
     Follow,
     End;
+    AudioSource audio;
+
+    private void PlayParticle(ParticleSystem ps)
+    {
+        ps.Play();
+        if (ps.Equals(Start))
+        {
+            Audio.clip = AudioManager.Instance.GetAudio(Sounds.GrabSound);
+            Audio.loop = false;
+        }
+        else if (ps.Equals(Follow))
+        {
+            Audio.clip = AudioManager.Instance.GetAudio(Sounds.HoverSound);
+            Audio.loop = true;
+        }
+        else if (ps.Equals(End))
+        {
+            Audio.clip = AudioManager.Instance.GetAudio(Sounds.DropSound);
+            Audio.loop = false;
+        }
+        Audio.Play();
+    }
+
+    public AudioSource Audio
+    {
+        get
+        {
+            if (!audio)
+                audio = GetComponent<AudioSource>();
+            return audio;
+        }
+    }
 
     public void SwapParticleFeedback(GameObject from, GameObject to)
     {
@@ -30,9 +62,10 @@ public class ParticleFeedbackSystem : MonoBehaviour {
         transform.position = startObjPos;
         col = to.GetComponent<PolygonCollider2D>();
         Vector3 toPos = col.bounds.center;
-        Start.Play();
+        PlayParticle(Start);
+        
         while (Start.isPlaying) yield return null;
-        Follow.Play();
+        PlayParticle(Follow);
         float t = 0;
         while (Vector3.Distance(transform.position, toPos) > 0.5f)
         {
@@ -42,7 +75,7 @@ public class ParticleFeedbackSystem : MonoBehaviour {
         }
         Follow.Stop();
         transform.position = toPos;
-        End.Play();
+        PlayParticle(End);
     }
     private void SetParticleColor(GameObject go)
     {
@@ -65,7 +98,7 @@ public class ParticleFeedbackSystem : MonoBehaviour {
                 if (!Start.isPlaying)
                 {
                     _state = ParticleState.Follow;
-                    Follow.Play();
+                    PlayParticle(Follow);
                     return;
                 }
                 break;
@@ -100,6 +133,7 @@ public class ParticleFeedbackSystem : MonoBehaviour {
                 Start.Stop();
                 break;
             case ParticleState.Follow:
+
                 StartCoroutine(FlyBack(startObjPos));
                 _state = ParticleState.FlyBack;
                 break;
@@ -121,7 +155,13 @@ public class ParticleFeedbackSystem : MonoBehaviour {
     {
         while (Start.isPlaying) yield return null;
         if(Follow.isStopped)
-            Follow.Play();
+        {
+            PlayParticle(Follow);
+        }
+        else
+        {
+            AudioManager.Instance.PlayAudio(Sounds.ReturnSound);
+        }
         Vector3 startPos = transform.position;
         float t = 0;
         while (Vector3.Distance(transform.position, backPos) > 0.5f)
@@ -132,7 +172,8 @@ public class ParticleFeedbackSystem : MonoBehaviour {
         }
         Follow.Stop();
         transform.position = backPos;
-        End.Play();
+        PlayParticle(End);
+
     }
     public void StartDrag(GameObject go)
     {
@@ -144,7 +185,7 @@ public class ParticleFeedbackSystem : MonoBehaviour {
         transform.position = startObjPos;
         size *= 0.25f;
         transform.localScale = size;
-        Start.Play();
+        PlayParticle(Start);
         _state = ParticleState.Start;
     }
     public void EndDrag(GameObject go)
