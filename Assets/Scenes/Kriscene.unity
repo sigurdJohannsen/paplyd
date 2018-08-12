@@ -15125,6 +15125,62 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.67931503
       objectReference: {fileID: 0}
+    - target: {fileID: 114746162292669694, guid: fa4f8fef51c6f9f4c84d49c98f30ced7,
+        type: 2}
+      propertyPath: Sound.Sound
+      value: Toaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 212836356658074922, guid: fa4f8fef51c6f9f4c84d49c98f30ced7,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1aafdfaf4cfdd924886528d6f887d374,
+        type: 3}
+    - target: {fileID: 4167888553583656, guid: fa4f8fef51c6f9f4c84d49c98f30ced7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.189
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167888553583656, guid: fa4f8fef51c6f9f4c84d49c98f30ced7, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.9645309
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167888553583656, guid: fa4f8fef51c6f9f4c84d49c98f30ced7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.016
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167888553583656, guid: fa4f8fef51c6f9f4c84d49c98f30ced7, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.0195888
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730732146922472, guid: fa4f8fef51c6f9f4c84d49c98f30ced7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973439726349010, guid: fa4f8fef51c6f9f4c84d49c98f30ced7,
+        type: 2}
+      propertyPath: OjneFigure
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167888553583656, guid: fa4f8fef51c6f9f4c84d49c98f30ced7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167888553583656, guid: fa4f8fef51c6f9f4c84d49c98f30ced7, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167888553583656, guid: fa4f8fef51c6f9f4c84d49c98f30ced7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167888553583656, guid: fa4f8fef51c6f9f4c84d49c98f30ced7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167888553583656, guid: fa4f8fef51c6f9f4c84d49c98f30ced7, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa4f8fef51c6f9f4c84d49c98f30ced7, type: 2}
   m_IsPrefabAsset: 0
@@ -15191,6 +15247,11 @@ Prefab:
     - target: {fileID: 4770009870723460, guid: 8192e59dcd2538448849b3f52efd039f, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.71812
+      objectReference: {fileID: 0}
+    - target: {fileID: 114150926834421744, guid: 8192e59dcd2538448849b3f52efd039f,
+        type: 2}
+      propertyPath: Sound.Sound
+      value: LawnMower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8192e59dcd2538448849b3f52efd039f, type: 2}
