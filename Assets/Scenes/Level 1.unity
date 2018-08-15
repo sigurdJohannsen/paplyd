@@ -346,6 +346,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 114168932867992118, guid: 07a5dfc52ab0823469b273c49016bf2d,
+        type: 2}
+      propertyPath: audioClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1fa297214c9a5c64cb145fe6afa3ad3e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07a5dfc52ab0823469b273c49016bf2d, type: 2}
   m_IsPrefabAsset: 0
@@ -734,7 +739,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ad453e85bf3452a4e91354d5b6306523, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1fa297214c9a5c64cb145fe6afa3ad3e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
