@@ -12,6 +12,7 @@ public class SwapManager : BaseSingleton<SwapManager>{
         from.GetComponent<SoundContainer>().Sound = to.GetComponent<SoundContainer>().Sound;
         to.GetComponent<SoundContainer>().Sound = temp;
         print($"swapping sounds from {from.name} to {to.name}");
+        LevelContainerManager.Instance.CheckWin();
     }
     
 }
