@@ -304,6 +304,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114300033687378860, guid: cf03f66697d22a54aba1b2f1fbb159e9,
+        type: 2}
+      propertyPath: Sound.Sound
+      value: Elephant
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf03f66697d22a54aba1b2f1fbb159e9, type: 2}
   m_IsPrefabAsset: 0
@@ -346,6 +351,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 114168932867992118, guid: 07a5dfc52ab0823469b273c49016bf2d,
+        type: 2}
+      propertyPath: audioClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1fa297214c9a5c64cb145fe6afa3ad3e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07a5dfc52ab0823469b273c49016bf2d, type: 2}
   m_IsPrefabAsset: 0
@@ -404,6 +414,11 @@ Prefab:
     - target: {fileID: 4148368763420256, guid: a7513be0be06b8c479cbe26bf89eebcf, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.6913899
+      objectReference: {fileID: 0}
+    - target: {fileID: 114592273060828076, guid: a7513be0be06b8c479cbe26bf89eebcf,
+        type: 2}
+      propertyPath: Sound.Sound
+      value: LawnMower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7513be0be06b8c479cbe26bf89eebcf, type: 2}
@@ -734,7 +749,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ad453e85bf3452a4e91354d5b6306523, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1fa297214c9a5c64cb145fe6afa3ad3e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1699,6 +1714,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.6816154
       objectReference: {fileID: 0}
+    - target: {fileID: 114723896438771082, guid: 20fbea24664f3db48887dc80ee74b363,
+        type: 2}
+      propertyPath: Sound.Sound
+      value: Cat
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20fbea24664f3db48887dc80ee74b363, type: 2}
   m_IsPrefabAsset: 0
@@ -1847,6 +1867,11 @@ Prefab:
     - target: {fileID: 1320997838449656, guid: 8192e59dcd2538448849b3f52efd039f, type: 2}
       propertyPath: m_Name
       value: LawnMoverRig
+      objectReference: {fileID: 0}
+    - target: {fileID: 114150926834421744, guid: 8192e59dcd2538448849b3f52efd039f,
+        type: 2}
+      propertyPath: Sound.Sound
+      value: Rooster
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8192e59dcd2538448849b3f52efd039f, type: 2}
