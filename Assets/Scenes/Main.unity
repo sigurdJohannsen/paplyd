@@ -446,7 +446,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1577028149}
+      - m_Target: {fileID: 0}
         m_MethodName: LoadScene
         m_Mode: 3
         m_Arguments:
@@ -493,12 +493,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1499093039}
   m_CullTransparentMesh: 0
---- !u!114 &1577028149 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114903666046347850, guid: 3d2e7b6684084c942a4c86d0633dbc4c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1902822348}
-  m_Script: {fileID: 11500000, guid: 991fdb65851a74740925a444f87ff15b, type: 3}
 --- !u!1 &1618967324
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,48 +637,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1711306847}
   m_CullTransparentMesh: 0
---- !u!1001 &1902822348
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4183387943007518, guid: 3d2e7b6684084c942a4c86d0633dbc4c, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4183387943007518, guid: 3d2e7b6684084c942a4c86d0633dbc4c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4183387943007518, guid: 3d2e7b6684084c942a4c86d0633dbc4c, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4183387943007518, guid: 3d2e7b6684084c942a4c86d0633dbc4c, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4183387943007518, guid: 3d2e7b6684084c942a4c86d0633dbc4c, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4183387943007518, guid: 3d2e7b6684084c942a4c86d0633dbc4c, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4183387943007518, guid: 3d2e7b6684084c942a4c86d0633dbc4c, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4183387943007518, guid: 3d2e7b6684084c942a4c86d0633dbc4c, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3d2e7b6684084c942a4c86d0633dbc4c, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &1987134341
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,7 +850,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1577028149}
+      - m_Target: {fileID: 0}
         m_MethodName: LoadScene
         m_Mode: 3
         m_Arguments:

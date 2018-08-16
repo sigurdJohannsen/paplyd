@@ -41,12 +41,12 @@ public class SoundContainer : MonoBehaviour {
     private void OnFocusEnter()
     {
         hover = true;
-#if UNITY_IOS
+#if IOS
         Handheld.Vibrate();
 #endif
-#if UNITY_ANDROID
+//#if ANDROID
         Handheld.Vibrate();
-#endif
+//#endif
     }
     private void AnimationCallback()
     {
