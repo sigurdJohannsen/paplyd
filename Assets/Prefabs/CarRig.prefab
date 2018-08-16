@@ -338,7 +338,7 @@ MonoBehaviour:
   Animal: 
   Sound:
     Sound: Cat
-    Color: {r: 0.88354087, g: 1, b: 0, a: 1}
+    Color: {r: 0.77647066, g: 0.81568635, b: 0.2901961, a: 1}
   ScaleIncreasePercentage: 5
 --- !u!212 &212244650008593732
 SpriteRenderer:

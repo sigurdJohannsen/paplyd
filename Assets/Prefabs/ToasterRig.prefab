@@ -334,7 +334,7 @@ MonoBehaviour:
   Animal: Toaster
   Sound:
     Sound: Toaster
-    Color: {r: 0, g: 0.10293555, b: 1, a: 1}
+    Color: {r: 0.33681917, g: 0.76429576, b: 0.8207547, a: 1}
   ScaleIncreasePercentage: 20
 --- !u!114 &114973439726349010
 MonoBehaviour:
