@@ -371,7 +371,7 @@ MonoBehaviour:
   Animal: Blender
   Sound:
     Sound: Blender
-    Color: {r: 0.9960785, g: 0.6901961, b: 0.9450981, a: 1}
+    Color: {r: 0.8490566, g: 0.5727127, b: 0.8065423, a: 1}
   ScaleIncreasePercentage: 5
 --- !u!114 &114760412295490416
 MonoBehaviour:

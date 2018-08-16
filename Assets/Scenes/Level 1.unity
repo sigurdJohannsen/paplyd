@@ -309,6 +309,21 @@ Prefab:
       propertyPath: Sound.Sound
       value: Elephant
       objectReference: {fileID: 0}
+    - target: {fileID: 114300033687378860, guid: cf03f66697d22a54aba1b2f1fbb159e9,
+        type: 2}
+      propertyPath: Sound.Color.r
+      value: 0.3529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 114300033687378860, guid: cf03f66697d22a54aba1b2f1fbb159e9,
+        type: 2}
+      propertyPath: Sound.Color.g
+      value: 0.7254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 114300033687378860, guid: cf03f66697d22a54aba1b2f1fbb159e9,
+        type: 2}
+      propertyPath: Sound.Color.b
+      value: 0.8392157
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf03f66697d22a54aba1b2f1fbb159e9, type: 2}
   m_IsPrefabAsset: 0
@@ -359,6 +374,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07a5dfc52ab0823469b273c49016bf2d, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &507200954 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114150926834421744, guid: 8192e59dcd2538448849b3f52efd039f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2145239447}
+  m_Script: {fileID: 11500000, guid: 6e7e2c4cabafa1544a004d7fed18ec7c, type: 3}
 --- !u!1001 &529840036
 Prefab:
   m_ObjectHideFlags: 0
@@ -424,6 +445,21 @@ Prefab:
         type: 2}
       propertyPath: m_SortingOrder
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114592273060828076, guid: a7513be0be06b8c479cbe26bf89eebcf,
+        type: 2}
+      propertyPath: Sound.Color.r
+      value: 0.9254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 114592273060828076, guid: a7513be0be06b8c479cbe26bf89eebcf,
+        type: 2}
+      propertyPath: Sound.Color.g
+      value: 0.56078434
+      objectReference: {fileID: 0}
+    - target: {fileID: 114592273060828076, guid: a7513be0be06b8c479cbe26bf89eebcf,
+        type: 2}
+      propertyPath: Sound.Color.b
+      value: 0.25882354
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7513be0be06b8c479cbe26bf89eebcf, type: 2}
@@ -847,6 +883,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114954685600961104, guid: 76bbdbe5353fdb1498124972c6cc0872,
+        type: 2}
+      propertyPath: Animals.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4717747204959492, guid: 76bbdbe5353fdb1498124972c6cc0872, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -878,6 +919,31 @@ Prefab:
     - target: {fileID: 4717747204959492, guid: 76bbdbe5353fdb1498124972c6cc0872, type: 2}
       propertyPath: m_RootOrder
       value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 114954685600961104, guid: 76bbdbe5353fdb1498124972c6cc0872,
+        type: 2}
+      propertyPath: Animals.Array.data[0]
+      value: 
+      objectReference: {fileID: 507200954}
+    - target: {fileID: 114954685600961104, guid: 76bbdbe5353fdb1498124972c6cc0872,
+        type: 2}
+      propertyPath: Animals.Array.data[1]
+      value: 
+      objectReference: {fileID: 950596975}
+    - target: {fileID: 114954685600961104, guid: 76bbdbe5353fdb1498124972c6cc0872,
+        type: 2}
+      propertyPath: Animals.Array.data[2]
+      value: 
+      objectReference: {fileID: 1586818085}
+    - target: {fileID: 114954685600961104, guid: 76bbdbe5353fdb1498124972c6cc0872,
+        type: 2}
+      propertyPath: Animals.Array.data[3]
+      value: 
+      objectReference: {fileID: 1843301840}
+    - target: {fileID: 114954685600961104, guid: 76bbdbe5353fdb1498124972c6cc0872,
+        type: 2}
+      propertyPath: TotalAnimals
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76bbdbe5353fdb1498124972c6cc0872, type: 2}
@@ -938,6 +1004,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &950596975 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114723896438771082, guid: 20fbea24664f3db48887dc80ee74b363,
+    type: 2}
+  m_PrefabInternal: {fileID: 1690278993}
+  m_Script: {fileID: 11500000, guid: 6e7e2c4cabafa1544a004d7fed18ec7c, type: 3}
 --- !u!1001 &999793565
 Prefab:
   m_ObjectHideFlags: 0
@@ -1663,6 +1735,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1522277156}
   m_CullTransparentMesh: 0
+--- !u!114 &1586818085 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114592273060828076, guid: a7513be0be06b8c479cbe26bf89eebcf,
+    type: 2}
+  m_PrefabInternal: {fileID: 529840036}
+  m_Script: {fileID: 11500000, guid: 6e7e2c4cabafa1544a004d7fed18ec7c, type: 3}
 --- !u!1001 &1690278993
 Prefab:
   m_ObjectHideFlags: 0
@@ -1727,21 +1805,27 @@ Prefab:
     - target: {fileID: 114723896438771082, guid: 20fbea24664f3db48887dc80ee74b363,
         type: 2}
       propertyPath: Sound.Color.r
-      value: 0.63456744
-      objectReference: {fileID: 0}
-    - target: {fileID: 114723896438771082, guid: 20fbea24664f3db48887dc80ee74b363,
-        type: 2}
-      propertyPath: Sound.Color.g
       value: 0.8679245
       objectReference: {fileID: 0}
     - target: {fileID: 114723896438771082, guid: 20fbea24664f3db48887dc80ee74b363,
         type: 2}
+      propertyPath: Sound.Color.g
+      value: 0.5333461
+      objectReference: {fileID: 0}
+    - target: {fileID: 114723896438771082, guid: 20fbea24664f3db48887dc80ee74b363,
+        type: 2}
       propertyPath: Sound.Color.b
-      value: 0.6554029
+      value: 0.47080812
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20fbea24664f3db48887dc80ee74b363, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1843301840 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114300033687378860, guid: cf03f66697d22a54aba1b2f1fbb159e9,
+    type: 2}
+  m_PrefabInternal: {fileID: 322927675}
+  m_Script: {fileID: 11500000, guid: 6e7e2c4cabafa1544a004d7fed18ec7c, type: 3}
 --- !u!1 &1978245339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1892,6 +1976,21 @@ Prefab:
         type: 2}
       propertyPath: Sound.Sound
       value: Rooster
+      objectReference: {fileID: 0}
+    - target: {fileID: 114150926834421744, guid: 8192e59dcd2538448849b3f52efd039f,
+        type: 2}
+      propertyPath: Sound.Color.g
+      value: 0.8509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 114150926834421744, guid: 8192e59dcd2538448849b3f52efd039f,
+        type: 2}
+      propertyPath: Sound.Color.r
+      value: 0.6156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 114150926834421744, guid: 8192e59dcd2538448849b3f52efd039f,
+        type: 2}
+      propertyPath: Sound.Color.b
+      value: 0.63529414
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8192e59dcd2538448849b3f52efd039f, type: 2}
