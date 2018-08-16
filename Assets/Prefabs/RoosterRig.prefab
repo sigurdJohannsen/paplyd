@@ -667,7 +667,7 @@ MonoBehaviour:
   Animal: Rooster
   Sound:
     Sound: Elephant
-    Color: {r: 0.4952253, g: 1, b: 0, a: 1}
+    Color: {r: 0.6, g: 0.8196079, b: 0.61960787, a: 1}
   ScaleIncreasePercentage: 5
 --- !u!210 &210604346788584756
 SortingGroup:

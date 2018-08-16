@@ -415,7 +415,7 @@ MonoBehaviour:
   Animal: Telephone
   Sound:
     Sound: Telephone
-    Color: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
+    Color: {r: 0.9056604, g: 0.76906115, b: 0.17515129, a: 1}
   ScaleIncreasePercentage: 20
 --- !u!114 &114264394335044846
 MonoBehaviour:

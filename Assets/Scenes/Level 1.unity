@@ -420,6 +420,11 @@ Prefab:
       propertyPath: Sound.Sound
       value: LawnMower
       objectReference: {fileID: 0}
+    - target: {fileID: 212596070955969464, guid: a7513be0be06b8c479cbe26bf89eebcf,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7513be0be06b8c479cbe26bf89eebcf, type: 2}
   m_IsPrefabAsset: 0
@@ -1718,6 +1723,21 @@ Prefab:
         type: 2}
       propertyPath: Sound.Sound
       value: Cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 114723896438771082, guid: 20fbea24664f3db48887dc80ee74b363,
+        type: 2}
+      propertyPath: Sound.Color.r
+      value: 0.63456744
+      objectReference: {fileID: 0}
+    - target: {fileID: 114723896438771082, guid: 20fbea24664f3db48887dc80ee74b363,
+        type: 2}
+      propertyPath: Sound.Color.g
+      value: 0.8679245
+      objectReference: {fileID: 0}
+    - target: {fileID: 114723896438771082, guid: 20fbea24664f3db48887dc80ee74b363,
+        type: 2}
+      propertyPath: Sound.Color.b
+      value: 0.6554029
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20fbea24664f3db48887dc80ee74b363, type: 2}
