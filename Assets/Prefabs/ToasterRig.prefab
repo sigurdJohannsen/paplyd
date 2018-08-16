@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 82602174378183284}
   - component: {fileID: 114973439726349010}
   - component: {fileID: 60162823981426922}
+  - component: {fileID: 210534976322278766}
   m_Layer: 0
   m_Name: ToasterRig
   m_TagString: Untagged
@@ -154,9 +155,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1473296722966262}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.426441, y: -0.5758151, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.0094007375, w: 0.99995583}
+  m_LocalPosition: {x: -9.87, y: 4.96, z: -2.38}
+  m_LocalScale: {x: -0.6977634, y: 0.69776344, z: 0.69776344}
   m_Children:
   - {fileID: 4167888553583656}
   - {fileID: 4216146481564728}
@@ -164,7 +165,7 @@ Transform:
   - {fileID: 4730732146922472}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.077}
 --- !u!60 &60162823981426922
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -333,9 +334,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animal: Toaster
   Sound:
-    Sound: Toaster
-    Color: {r: 0.41233534, g: 0.73229927, b: 0.7735849, a: 1}
-  ScaleIncreasePercentage: 20
+    Sound: LawnMower
+    Color: {r: 0.6156863, g: 0.8509804, b: 0.63529414, a: 1}
+  ScaleIncreasePercentage: 5
 --- !u!114 &114973439726349010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -354,6 +355,16 @@ MonoBehaviour:
   Ojne: {fileID: 212836356658074922}
   Krop:
   - {fileID: 212060056840367512}
+--- !u!210 &210534976322278766
+SortingGroup:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1473296722966262}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!212 &212060056840367512
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -527,7 +538,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: aa98016f225f58e4db512f7cad61bbcc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 09cc07daaf9183a499f4f674714d3835, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

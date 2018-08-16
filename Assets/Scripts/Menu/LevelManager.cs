@@ -19,8 +19,11 @@ public class LevelManager : BaseSingleton<LevelManager>
     public void LoadNextLevel()
     {
         int n = SceneManager.GetActiveScene().buildIndex;
-
-        SceneManager.LoadScene(n + 1);
+        int k = SceneManager.sceneCountInBuildSettings;
+        if (n+1 >= k)
+            SceneManager.LoadScene(0);
+        else
+            SceneManager.LoadScene(n + 1);
     }
     
     public void OnLevelWasLoaded(int level)

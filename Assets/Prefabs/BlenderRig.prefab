@@ -370,7 +370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animal: Blender
   Sound:
-    Sound: Telephone
+    Sound: Blender
     Color: {r: 0.90588236, g: 0.76862746, b: 0.1764706, a: 1}
   ScaleIncreasePercentage: 5
 --- !u!114 &114760412295490416

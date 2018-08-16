@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 82670330480420548}
   - component: {fileID: 60362416447134062}
   - component: {fileID: 114264394335044846}
+  - component: {fileID: 210129710523476134}
   m_Layer: 0
   m_Name: TelephoneRig
   m_TagString: Untagged
@@ -159,7 +160,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1420159664259714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -0.17, z: 0.11621094}
+  m_LocalPosition: {x: -0.67, y: -0.17, z: 0.11621094}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4269867459510442}
@@ -415,8 +416,8 @@ MonoBehaviour:
   Animal: Telephone
   Sound:
     Sound: Telephone
-    Color: {r: 0.9056604, g: 0.76906115, b: 0.17515129, a: 1}
-  ScaleIncreasePercentage: 20
+    Color: {r: 0.8509804, g: 0.57254905, b: 0.80784315, a: 1}
+  ScaleIncreasePercentage: 5
 --- !u!114 &114264394335044846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -450,6 +451,16 @@ MonoBehaviour:
   Mund: {fileID: 212368026325435006}
   Ojne: {fileID: 212034824911595462}
   Krop: []
+--- !u!210 &210129710523476134
+SortingGroup:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1420159664259714}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!212 &212007850826779972
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -576,7 +587,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 507c14145a5a7434fb2b3caede25317f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -622,7 +633,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 989f9f4885f5f8749b73cb67c108042f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

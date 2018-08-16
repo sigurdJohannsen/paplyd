@@ -385,14 +385,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1553972453149938}
-  m_LocalRotation: {x: -0, y: -0, z: 0.002474862, w: 0.999997}
-  m_LocalPosition: {x: 3.97, y: -1.14, z: 0}
-  m_LocalScale: {x: 0.74343, y: 0.74343, z: 0.74343}
+  m_LocalRotation: {x: -0.000106731524, y: 0.04312611, z: 0.0024725597, w: 0.9990666}
+  m_LocalPosition: {x: 3.23, y: -0.32, z: 0}
+  m_LocalScale: {x: 0.82953066, y: 0.82953066, z: 0.82953066}
   m_Children:
   - {fileID: 4961744053788478}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.284}
+  m_LocalEulerAnglesHint: {x: -0.024, y: 4.9430003, z: 0.28300002}
 --- !u!4 &4228881759875744
 Transform:
   m_ObjectHideFlags: 1
@@ -1162,7 +1162,7 @@ MonoBehaviour:
   Animal: Elephant
   Sound:
     Sound: Elephant
-    Color: {r: 0.35248306, g: 0.72418684, b: 0.8396226, a: 1}
+    Color: {r: 0.8666667, g: 0.53333336, b: 0.47058824, a: 1}
   ScaleIncreasePercentage: 5
 --- !u!114 &114960139755209730
 MonoBehaviour:
@@ -1191,7 +1191,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
 --- !u!212 &212134103589336330
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -1410,7 +1410,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -12
   m_Sprite: {fileID: 21300000, guid: 4855ef721d1abad41a15d69efb12ad6d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
