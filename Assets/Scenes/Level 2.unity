@@ -1478,47 +1478,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4218919362118416, guid: e3b64bd60eae9dd46bb1cbd8aa77ca8b, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.72705466
-      objectReference: {fileID: 0}
-    - target: {fileID: 4218919362118416, guid: e3b64bd60eae9dd46bb1cbd8aa77ca8b, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.72705466
-      objectReference: {fileID: 0}
-    - target: {fileID: 4218919362118416, guid: e3b64bd60eae9dd46bb1cbd8aa77ca8b, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.72705466
-      objectReference: {fileID: 0}
-    - target: {fileID: 210233200895691350, guid: e3b64bd60eae9dd46bb1cbd8aa77ca8b,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4218919362118416, guid: e3b64bd60eae9dd46bb1cbd8aa77ca8b, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -0.85800004
-      objectReference: {fileID: 0}
-    - target: {fileID: 114398298965907570, guid: e3b64bd60eae9dd46bb1cbd8aa77ca8b,
-        type: 2}
-      propertyPath: Sound.Sound
-      value: Telephone
-      objectReference: {fileID: 0}
-    - target: {fileID: 114398298965907570, guid: e3b64bd60eae9dd46bb1cbd8aa77ca8b,
-        type: 2}
-      propertyPath: Sound.Color.r
-      value: 0.90588236
-      objectReference: {fileID: 0}
-    - target: {fileID: 114398298965907570, guid: e3b64bd60eae9dd46bb1cbd8aa77ca8b,
-        type: 2}
-      propertyPath: Sound.Color.g
-      value: 0.76862746
-      objectReference: {fileID: 0}
-    - target: {fileID: 114398298965907570, guid: e3b64bd60eae9dd46bb1cbd8aa77ca8b,
-        type: 2}
-      propertyPath: Sound.Color.b
-      value: 0.1764706
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3b64bd60eae9dd46bb1cbd8aa77ca8b, type: 2}
   m_IsPrefabAsset: 0
@@ -2125,7 +2084,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4840010152424900, guid: fa4f8fef51c6f9f4c84d49c98f30ced7, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.69776344
+      value: -0.6977634
       objectReference: {fileID: 0}
     - target: {fileID: 4840010152424900, guid: fa4f8fef51c6f9f4c84d49c98f30ced7, type: 2}
       propertyPath: m_LocalScale.y
@@ -2201,7 +2160,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4770009870723460, guid: 8192e59dcd2538448849b3f52efd039f, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4770009870723460, guid: 8192e59dcd2538448849b3f52efd039f, type: 2}
       propertyPath: m_LocalRotation.z
@@ -2209,7 +2168,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4770009870723460, guid: 8192e59dcd2538448849b3f52efd039f, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4770009870723460, guid: 8192e59dcd2538448849b3f52efd039f, type: 2}
       propertyPath: m_RootOrder
@@ -2218,6 +2177,14 @@ Prefab:
     - target: {fileID: 1320997838449656, guid: 8192e59dcd2538448849b3f52efd039f, type: 2}
       propertyPath: m_Name
       value: LawnMoverRig
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770009870723460, guid: 8192e59dcd2538448849b3f52efd039f, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770009870723460, guid: 8192e59dcd2538448849b3f52efd039f, type: 2}
+      propertyPath: m_LocalScale.x
+      value: -0.5883988
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8192e59dcd2538448849b3f52efd039f, type: 2}

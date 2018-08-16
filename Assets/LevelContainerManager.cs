@@ -34,8 +34,11 @@ public class LevelContainerManager : BaseSingleton<LevelContainerManager>{
         TotalCorrectAnimals = 0;
         foreach (var animal in Animals)
         {
+            animal.GetComponent<Animator>().SetBool("Correct", animal.Animal == animal.Sound.Sound);
             if (animal.Animal == animal.Sound.Sound)
+            {
                 TotalCorrectAnimals++;
+            }
         }
         if (TotalAnimals == TotalCorrectAnimals)
             StartCoroutine(Win());
