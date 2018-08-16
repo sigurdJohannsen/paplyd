@@ -19,6 +19,7 @@ public class AudioManager : BaseSingleton<AudioManager>{
         audio.clip = audioClips[(int)sound];
         audio.Play();
     }
+    
 }
 public enum Sounds
 {

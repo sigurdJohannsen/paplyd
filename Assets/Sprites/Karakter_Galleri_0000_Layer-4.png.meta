@@ -50,7 +50,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -72,9 +72,44 @@ TextureImporter:
   spriteSheet:
     serializedVersion: 2
     sprites: []
-    outline: []
-    physicsShape: []
-    bones: []
+    outline:
+    - - {x: -64.5, y: 21}
+      - {x: 53.5, y: 90}
+      - {x: 70.5, y: 90}
+      - {x: 70.5, y: 20}
+    - - {x: -66.5, y: -3}
+      - {x: -66.5, y: 22}
+      - {x: 48.5, y: 22}
+      - {x: 48.5, y: -3}
+    - - {x: 48.5, y: 18}
+      - {x: 48.5, y: 25}
+      - {x: 51.5, y: 25}
+      - {x: 51.5, y: 18}
+    physicsShape:
+    - - {x: -12.5, y: -1}
+      - {x: -12.5, y: 32}
+      - {x: 13.5, y: 32}
+      - {x: 13.5, y: -1}
+    - - {x: -84.5, y: 43}
+      - {x: -84.5, y: 90}
+      - {x: -20.5, y: 90}
+      - {x: -20.5, y: 43}
+    bones:
+    - name: root
+      position: {x: 210.14047, y: 125.50285, z: 0}
+      rotation: {x: 0, y: 0, z: 0.9934028, w: 0.114677496}
+      length: 52.177307
+      parentId: -1
+    - name: bone_2
+      position: {x: 52.281208, y: -0.44375205, z: 0}
+      rotation: {x: 0, y: 0, z: -0.1444835, w: 0.9895072}
+      length: 56.962624
+      parentId: 0
+    - name: bone_1
+      position: {x: 56.56709, y: -0.22616422, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7443693, w: 0.6677682}
+      length: 89.40868
+      parentId: 1
     spriteID: 841172b8eb8b11a42a1dc2e59eb61914
     vertices: []
     indices: 

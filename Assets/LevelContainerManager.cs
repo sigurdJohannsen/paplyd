@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using BaseClasses;
 using System;
+
 /// <summary>
 /// This manager needs to be set in the scene, and setup accordingly for the level to function right
 /// </summary>
@@ -10,8 +11,11 @@ public class LevelContainerManager : BaseSingleton<LevelContainerManager>{
 
     public List<SoundContainer> Animals;
 
+    public GameObject WinScreen;
+    public GameObject VidereObj;
     public int TotalAnimals;
     public int TotalCorrectAnimals;
+
     private void OnValidate()
     {
         if (Animals.Count != 0)
@@ -34,11 +38,26 @@ public class LevelContainerManager : BaseSingleton<LevelContainerManager>{
                 TotalCorrectAnimals++;
         }
         if (TotalAnimals == TotalCorrectAnimals)
-            Win();
+            StartCoroutine(Win());
     }
 
-    private void Win()
+    private IEnumerator Win()
     {
-     
+        yield return new WaitForSeconds(2.0f);
+        WinScreen.SetActive(true);
+        while(WinScreen.GetComponent<CanvasGroup>().alpha < 1.0f)
+        {
+            WinScreen.GetComponent<CanvasGroup>().alpha += Time.deltaTime;
+            yield return null;
+        }
+        VidereObj.SetActive(true);
+    }
+    public void CloseWinScreen()
+    {
+        WinScreen.SetActive(false);
+    }
+    public void Videre()
+    {
+        LevelManager.Instance.LoadNextLevel();
     }
 }
