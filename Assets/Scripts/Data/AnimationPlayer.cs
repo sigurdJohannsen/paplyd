@@ -21,7 +21,7 @@ public class AnimationPlayer : MonoBehaviour {
     public SpriteRenderer Mund;
     public SpriteRenderer Ojne;
     public List<SpriteRenderer> Krop;
-
+    WaitForEndOfFrame waitForEnd = new WaitForEndOfFrame();
     Animator animator;
 
     private string[] alphabeticInterger= {"","b","c","d" };
@@ -54,7 +54,7 @@ public class AnimationPlayer : MonoBehaviour {
     public IEnumerator PlayAnimation(string tag, UnityAction animationCallback)
     {
         AnimationDatabase.Instance.SoundAnimationDictionary.TryGetValue(tag, out currentSoundAnimation);
-
+     
         if (!audioSource)
             audioSource = GetComponent<AudioSource>();
         audioSource.clip = Resources.Load("Sounds/"+tag) as AudioClip;
@@ -64,7 +64,8 @@ public class AnimationPlayer : MonoBehaviour {
        
         for (int i = 0; i < currentSoundAnimation.TimeStepList.Count + 1; i++)
         {
-            if(i == currentSoundAnimation.TimeStepList.Count)
+           
+            if (i == currentSoundAnimation.TimeStepList.Count)
             {
                 yield return new WaitForSecondsRealtime(audioTime - timeWaited);
                 currentSoundAnimation = AnimationDatabase.Instance.IdleSoundAnimation;
@@ -74,10 +75,22 @@ public class AnimationPlayer : MonoBehaviour {
             }
             else
             {
+                AnimatorAssist(currentSoundAnimation.TimeStepList[i].Animation);
+                
+                while (currentSoundAnimation.TimeStepList[i].time > timeWaited)
+                {
+                    yield return waitForEnd;
+                    timeWaited += Time.deltaTime;
+                    SetSprites(i);
+                }
+                
+                /*
                 yield return new WaitForSecondsRealtime(currentSoundAnimation.TimeStepList[i].time - timeWaited);
+                yield return waitForEnd;
                 timeWaited = currentSoundAnimation.TimeStepList[i].time;
                 SetSprites(i);
                 AnimatorAssist(currentSoundAnimation.TimeStepList[i].Animation);
+                */
             }
         }
         
@@ -90,6 +103,7 @@ public class AnimationPlayer : MonoBehaviour {
         {
             if (AnimationDatabase.Instance.KropList.TryGetValue(KropFigure + currentSoundAnimation.TimeStepList[csv].Krop + alphabeticInterger[i], out tempKrop))
             {
+                
                 Krop[i].sprite = tempKrop;
             }
             else

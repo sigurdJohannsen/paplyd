@@ -677,9 +677,16 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 3b78935e8e2ff6346aef56f1b9172ea3, type: 3}
+      value: {fileID: 21300000, guid: 0cd30adc586cb0142bbe046f910d0ec1, type: 3}
     attribute: m_Sprite
     path: Mund
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: a0bc5709516fa224f84eef4b05fc67d0, type: 3}
+    attribute: m_Sprite
+    path: Ojne
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -781,6 +788,13 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     - serializedVersion: 2
+      path: 1641351807
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
       path: 2879460911
       attribute: 3
       script: {fileID: 0}
@@ -788,7 +802,8 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 3b78935e8e2ff6346aef56f1b9172ea3, type: 3}
+    - {fileID: 21300000, guid: 0cd30adc586cb0142bbe046f910d0ec1, type: 3}
+    - {fileID: 21300000, guid: a0bc5709516fa224f84eef4b05fc67d0, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
