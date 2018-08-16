@@ -335,10 +335,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7e2c4cabafa1544a004d7fed18ec7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Animal: 
+  Animal: Car
   Sound:
-    Sound: Cat
-    Color: {r: 0.77647066, g: 0.81568635, b: 0.2901961, a: 1}
+    Sound: Car
+    Color: {r: 0.80301064, g: 0.8301887, b: 0.46600214, a: 1}
   ScaleIncreasePercentage: 5
 --- !u!212 &212244650008593732
 SpriteRenderer:

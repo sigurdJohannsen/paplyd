@@ -431,9 +431,30 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.65996605
       objectReference: {fileID: 0}
+    - target: {fileID: 114300033687378860, guid: cf03f66697d22a54aba1b2f1fbb159e9,
+        type: 2}
+      propertyPath: Sound.Color.r
+      value: 0.41568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 114300033687378860, guid: cf03f66697d22a54aba1b2f1fbb159e9,
+        type: 2}
+      propertyPath: Sound.Color.g
+      value: 0.73333335
+      objectReference: {fileID: 0}
+    - target: {fileID: 114300033687378860, guid: cf03f66697d22a54aba1b2f1fbb159e9,
+        type: 2}
+      propertyPath: Sound.Color.b
+      value: 0.7764706
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf03f66697d22a54aba1b2f1fbb159e9, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &322927676 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114300033687378860, guid: cf03f66697d22a54aba1b2f1fbb159e9,
+    type: 2}
+  m_PrefabInternal: {fileID: 322927675}
+  m_Script: {fileID: 11500000, guid: 6e7e2c4cabafa1544a004d7fed18ec7c, type: 3}
 --- !u!114 &337704301 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114671716663907102, guid: 124787fb6234fd24d8fbe6a452e47c75,
@@ -447,6 +468,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114954685600961104, guid: 76bbdbe5353fdb1498124972c6cc0872,
+        type: 2}
+      propertyPath: Animals.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4717747204959492, guid: 76bbdbe5353fdb1498124972c6cc0872, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -482,7 +508,42 @@ Prefab:
     - target: {fileID: 114954685600961104, guid: 76bbdbe5353fdb1498124972c6cc0872,
         type: 2}
       propertyPath: TotalCorrectAnimals
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114954685600961104, guid: 76bbdbe5353fdb1498124972c6cc0872,
+        type: 2}
+      propertyPath: Animals.Array.data[0]
+      value: 
+      objectReference: {fileID: 2019752313}
+    - target: {fileID: 114954685600961104, guid: 76bbdbe5353fdb1498124972c6cc0872,
+        type: 2}
+      propertyPath: Animals.Array.data[1]
+      value: 
+      objectReference: {fileID: 1866781537}
+    - target: {fileID: 114954685600961104, guid: 76bbdbe5353fdb1498124972c6cc0872,
+        type: 2}
+      propertyPath: Animals.Array.data[2]
+      value: 
+      objectReference: {fileID: 1690278994}
+    - target: {fileID: 114954685600961104, guid: 76bbdbe5353fdb1498124972c6cc0872,
+        type: 2}
+      propertyPath: Animals.Array.data[3]
+      value: 
+      objectReference: {fileID: 1423233926}
+    - target: {fileID: 114954685600961104, guid: 76bbdbe5353fdb1498124972c6cc0872,
+        type: 2}
+      propertyPath: Animals.Array.data[4]
+      value: 
+      objectReference: {fileID: 1239877275}
+    - target: {fileID: 114954685600961104, guid: 76bbdbe5353fdb1498124972c6cc0872,
+        type: 2}
+      propertyPath: Animals.Array.data[5]
+      value: 
+      objectReference: {fileID: 322927676}
+    - target: {fileID: 114954685600961104, guid: 76bbdbe5353fdb1498124972c6cc0872,
+        type: 2}
+      propertyPath: TotalAnimals
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76bbdbe5353fdb1498124972c6cc0872, type: 2}
@@ -1265,9 +1326,30 @@ Prefab:
       propertyPath: m_SortingOrder
       value: -12
       objectReference: {fileID: 0}
+    - target: {fileID: 114592273060828076, guid: a7513be0be06b8c479cbe26bf89eebcf,
+        type: 2}
+      propertyPath: Sound.Color.r
+      value: 0.8666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 114592273060828076, guid: a7513be0be06b8c479cbe26bf89eebcf,
+        type: 2}
+      propertyPath: Sound.Color.g
+      value: 0.53333336
+      objectReference: {fileID: 0}
+    - target: {fileID: 114592273060828076, guid: a7513be0be06b8c479cbe26bf89eebcf,
+        type: 2}
+      propertyPath: Sound.Color.b
+      value: 0.47058824
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7513be0be06b8c479cbe26bf89eebcf, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1239877275 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114592273060828076, guid: a7513be0be06b8c479cbe26bf89eebcf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1239877274}
+  m_Script: {fileID: 11500000, guid: 6e7e2c4cabafa1544a004d7fed18ec7c, type: 3}
 --- !u!1001 &1257307944
 Prefab:
   m_ObjectHideFlags: 0
@@ -1422,9 +1504,30 @@ Prefab:
       propertyPath: Sound.Sound
       value: Telephone
       objectReference: {fileID: 0}
+    - target: {fileID: 114398298965907570, guid: e3b64bd60eae9dd46bb1cbd8aa77ca8b,
+        type: 2}
+      propertyPath: Sound.Color.r
+      value: 0.90588236
+      objectReference: {fileID: 0}
+    - target: {fileID: 114398298965907570, guid: e3b64bd60eae9dd46bb1cbd8aa77ca8b,
+        type: 2}
+      propertyPath: Sound.Color.g
+      value: 0.76862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 114398298965907570, guid: e3b64bd60eae9dd46bb1cbd8aa77ca8b,
+        type: 2}
+      propertyPath: Sound.Color.b
+      value: 0.1764706
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3b64bd60eae9dd46bb1cbd8aa77ca8b, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1423233926 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114398298965907570, guid: e3b64bd60eae9dd46bb1cbd8aa77ca8b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1423233925}
+  m_Script: {fileID: 11500000, guid: 6e7e2c4cabafa1544a004d7fed18ec7c, type: 3}
 --- !u!1 &1432021190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,9 +1741,30 @@ Prefab:
       propertyPath: Sound.Sound
       value: Elephant
       objectReference: {fileID: 0}
+    - target: {fileID: 114723896438771082, guid: 20fbea24664f3db48887dc80ee74b363,
+        type: 2}
+      propertyPath: Sound.Color.r
+      value: 0.3529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 114723896438771082, guid: 20fbea24664f3db48887dc80ee74b363,
+        type: 2}
+      propertyPath: Sound.Color.g
+      value: 0.7254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 114723896438771082, guid: 20fbea24664f3db48887dc80ee74b363,
+        type: 2}
+      propertyPath: Sound.Color.b
+      value: 0.8392157
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20fbea24664f3db48887dc80ee74b363, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1690278994 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114723896438771082, guid: 20fbea24664f3db48887dc80ee74b363,
+    type: 2}
+  m_PrefabInternal: {fileID: 1690278993}
+  m_Script: {fileID: 11500000, guid: 6e7e2c4cabafa1544a004d7fed18ec7c, type: 3}
 --- !u!1 &1806439364
 GameObject:
   m_ObjectHideFlags: 0
@@ -1812,9 +1936,30 @@ Prefab:
       propertyPath: Sound.Sound
       value: Blender
       objectReference: {fileID: 0}
+    - target: {fileID: 114034386411272772, guid: cc69be91594091f499b6943e51b96a68,
+        type: 2}
+      propertyPath: Sound.Color.r
+      value: 0.8509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 114034386411272772, guid: cc69be91594091f499b6943e51b96a68,
+        type: 2}
+      propertyPath: Sound.Color.g
+      value: 0.57254905
+      objectReference: {fileID: 0}
+    - target: {fileID: 114034386411272772, guid: cc69be91594091f499b6943e51b96a68,
+        type: 2}
+      propertyPath: Sound.Color.b
+      value: 0.80784315
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc69be91594091f499b6943e51b96a68, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1866781537 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114034386411272772, guid: cc69be91594091f499b6943e51b96a68,
+    type: 2}
+  m_PrefabInternal: {fileID: 1866781536}
+  m_Script: {fileID: 11500000, guid: 6e7e2c4cabafa1544a004d7fed18ec7c, type: 3}
 --- !u!1001 &1916664024
 Prefab:
   m_ObjectHideFlags: 0
@@ -2007,6 +2152,27 @@ Prefab:
       propertyPath: Sound.Sound
       value: Rooster
       objectReference: {fileID: 0}
+    - target: {fileID: 114746162292669694, guid: fa4f8fef51c6f9f4c84d49c98f30ced7,
+        type: 2}
+      propertyPath: Sound.Color.r
+      value: 0.6156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 114746162292669694, guid: fa4f8fef51c6f9f4c84d49c98f30ced7,
+        type: 2}
+      propertyPath: Sound.Color.g
+      value: 0.8509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 114746162292669694, guid: fa4f8fef51c6f9f4c84d49c98f30ced7,
+        type: 2}
+      propertyPath: Sound.Color.b
+      value: 0.63529414
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa4f8fef51c6f9f4c84d49c98f30ced7, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &2019752313 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114746162292669694, guid: fa4f8fef51c6f9f4c84d49c98f30ced7,
+    type: 2}
+  m_PrefabInternal: {fileID: 2019752312}
+  m_Script: {fileID: 11500000, guid: 6e7e2c4cabafa1544a004d7fed18ec7c, type: 3}

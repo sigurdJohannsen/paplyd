@@ -666,8 +666,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animal: Rooster
   Sound:
-    Sound: Elephant
-    Color: {r: 0.6, g: 0.8196079, b: 0.61960787, a: 1}
+    Sound: Rooster
+    Color: {r: 0.6127626, g: 0.8490566, b: 0.6342438, a: 1}
   ScaleIncreasePercentage: 5
 --- !u!210 &210604346788584756
 SortingGroup:

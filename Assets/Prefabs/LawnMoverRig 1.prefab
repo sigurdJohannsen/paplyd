@@ -351,8 +351,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animal: LawnMower
   Sound:
-    Sound: Monkey
-    Color: {r: 0.8962264, g: 0.6496509, b: 0.48616055, a: 1}
+    Sound: LawnMower
+    Color: {r: 0.9245283, g: 0.5582058, b: 0.25729796, a: 1}
   ScaleIncreasePercentage: 5
 --- !u!114 &114286617835278976
 MonoBehaviour:

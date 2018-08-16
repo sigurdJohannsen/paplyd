@@ -428,8 +428,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animal: Cat
   Sound:
-    Sound: Monkey
-    Color: {r: 0.8867924, g: 0.43390334, b: 0.33882165, a: 1}
+    Sound: Cat
+    Color: {r: 0.8490566, g: 0.45478413, b: 0.3724635, a: 1}
   ScaleIncreasePercentage: 5
 --- !u!210 &210405667275780638
 SortingGroup:
