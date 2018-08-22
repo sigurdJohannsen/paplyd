@@ -63,7 +63,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1488013909525466
 GameObject:
   m_ObjectHideFlags: 1
@@ -497,9 +497,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   WinScreen: {fileID: 1259101291629606}
   VidereObj: {fileID: 1587677772050390}
-  TotalAnimals: 5
+  TotalAnimals: 7
   TotalCorrectAnimals: 0
 --- !u!114 &114998363061849352
 MonoBehaviour:

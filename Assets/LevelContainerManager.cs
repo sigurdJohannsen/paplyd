@@ -18,16 +18,19 @@ public class LevelContainerManager : BaseSingleton<LevelContainerManager>{
 
     private void OnValidate()
     {
+        Setup();
+    }
+    public void Setup()
+    {
         if (Animals.Count != 0)
             return;
         Animals.AddRange(FindObjectsOfType<SoundContainer>());
         TotalAnimals = Animals.Count;
         CheckWin();
     }
-
     public void Start()
     {
-        OnValidate();
+        Setup();
     }
     public void CheckWin()
     {
